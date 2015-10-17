@@ -14,10 +14,13 @@
       <%= f.label :password %>
       <%= f.password_field :password_digest %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_digest_confirmation %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+
+<br>
+<%= link_to "Back", root_path %>
