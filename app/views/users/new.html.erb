@@ -1,21 +1,24 @@
 <!-- CHANGE LATER -->
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="top_bar"></div>
+<h1 class="header">Sign up</h1>
+
+<div>
+  <div class="form">
     <%= form_for(@user) do |f| %>
       <%= f.label :Username %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'text_area' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.label :email%>
+      <%= f.email_field :email, class: 'text_area' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password_digest %>
+      <%= f.password_field :password_digest, class: 'text_area' %>
+
 
       <%= f.label :password_confirmation %>
-      <%= f.password_field :password_digest_confirmation %>
+      <%= f.password_field :password_digest_confirmation, class: 'text_area'%>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
