@@ -1,10 +1,13 @@
 <!-- CHANGE LATER -->
 <% provide(:title, "Log in") %>
 
-<div class="top_bar"></div>
-<h1 class="header">Log in</h1>
+<!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
+<div class="top_bar">
+  <div id="title">flickfindr</div>
+</div>
 
 <div>
+  <h1 class="header">Log in</h1>
   <div class="form">
     <%= form_for(:session, url: login_path) do |f| %>
 
