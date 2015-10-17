@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
 
+<div class="top_bar"></div>
+
+<div class="profile_left">
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -9,6 +11,7 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
