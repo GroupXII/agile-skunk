@@ -15,10 +15,12 @@
       <%= f.email_field :email, class:'text_area' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password_digest,  class:'text_area'%>
+      <%= f.password_field :password,  class:'text_area'%>
+   
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
+
 
     <p>New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></p>
   </div>
