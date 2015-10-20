@@ -19,5 +19,5 @@
 	 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
 <%else%>
 	 
-	<%= link_to "Login", login_path,{:class=>"link"}%>
+	<%= link_to'<button type="button">Login</button>'.html_safe, login_path,{:class=>"link"}%>
 <%end%>
