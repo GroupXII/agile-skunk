@@ -5,9 +5,20 @@
 
 <div class="top_bar">
   <div id="title">flickfindr</div>
+
+  <%if logged_in? %>
+    <div class="welcome">Welcome, <%= current_user.name %></div>
+    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+  <% end %>
+
 </div>
 
-<div>
+
+<div class="middle">
+<%if logged_in? %>
+  <p>You are not a new user! </p>
+<%else%>
+
   <h1 class="header">Register</h1>
   <div class="form">
     <%= form_for(@user) do |f| %>
@@ -27,8 +38,9 @@
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
+<%end%>
+
+
+  <%= link_to "Home", root_path, {:class=>"link"} %>
+   
 </div>
-
-<br>
-<%= link_to "Home", root_path, {:class=>"link"} %>
-

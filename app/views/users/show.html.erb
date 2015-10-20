@@ -7,28 +7,29 @@
   <% end %>
 </div>
 
-<h1> PROFILE </h1>
-<div class="profile_left">
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="middle">
+	<h1> PROFILE </h1>
+		<div class="profile_left">
+		<p>
+		<strong>Name:</strong>
+		<%= @user.name %>
+		</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+		<p>
+		<strong>Email:</strong>
+		<%= @user.email %>
+		</p>
 
-<p>
-  <strong>Pass:</strong>
-  <%= @user.password_digest %>
-</p>
-</div>
+		<p>
+		<strong>Pass:</strong>
+		<%= @user.password_digest %>
+		</p>
+		</div>
 
 
-<h2>Favorites</h2>
+	<h2>Favorites</h2>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Home', root_path %>
-<%= link_to 'Index', users_path %>
-
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Home', root_path %>
+	<%= link_to 'Index', users_path %>
+<div>

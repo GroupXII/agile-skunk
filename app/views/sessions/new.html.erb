@@ -4,24 +4,34 @@
 <!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
 <div class="top_bar">
   <div id="title">flickfindr</div>
+
+  <%if logged_in? %>
+    <div class="welcome">Welcome, <%= current_user.name %></div>
+    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+  <% end %>
+
 </div>
 
-<div>
-  <h1 class="header">Log in</h1>
-  <div class="form">
-    <%= form_for(:session, url: login_path) do |f| %>
+<div class="middle">
+<%if logged_in?%>
+    <p> Please logout in order to login again </p>
+<%else%>
+  
+    <h1 class="header">Log in</h1>
+    <div class="form">
+      <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email%>
-      <%= f.email_field :email, class:'text_area' %>
+        <%= f.label :email%>
+        <%= f.email_field :email, class:'text_area' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password,  class:'text_area'%>
-   
+        <%= f.label :password %>
+        <%= f.password_field :password,  class:'text_area'%>
+     
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      <% end %>
 
 
-    <p>New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></p>
-  </div>
+      <p>New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></p>
+<%end%>
 </div>
