@@ -9,7 +9,12 @@
 
 <%else%>
 	 
-	<button class= "btn btn-primary"> <%= link_to "Login", login_path,{:class=>"link"}%></button>
+	<%= link_to "Login", login_path,{:class=>"link"}%>
 <%end%>
 
-
+<%= form_tag users_path, :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	</p>
+<% end %>

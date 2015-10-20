@@ -1,8 +1,10 @@
 <!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
 <div class="top_bar">
   <div id="title">flickfindr</div>
+  <%if logged_in? %>
   <div class="welcome">Welcome, <%= current_user.name %></div>
   <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+  <% end %>
 </div>
 
 <h1> PROFILE </h1>
