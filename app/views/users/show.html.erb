@@ -11,25 +11,31 @@
 	<h1> PROFILE </h1>
 		<div class="profile_left">
 		<p>
-		<strong>Name:</strong>
-		<%= @user.name %>
+			<strong>Name:</strong>
+			<%= @user.name %>
 		</p>
 
 		<p>
-		<strong>Email:</strong>
-		<%= @user.email %>
+			<strong>Email:</strong>
+			<%= @user.email %>
 		</p>
 
 		<p>
-		<strong>Pass:</strong>
-		<%= @user.password_digest %>
+			<strong>Pass:</strong>
+			<%= @user.password_digest %>
 		</p>
 		</div>
 
 
 	<h2>Favorites</h2>
+    <ul></ul>
 
+	<h2>Friends</h2>
+    <ul></ul>
+
+ 	<div class="bottom">
 	<%= link_to 'Edit', edit_user_path(@user) %> |
 	<%= link_to 'Home', root_path %>
 	<%= link_to 'Index', users_path %>
+	</div>
 <div>

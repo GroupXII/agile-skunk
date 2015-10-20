@@ -2,7 +2,9 @@
   <div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
 
 <%if logged_in? %>
-	 <div class="welcome">Welcome, <%= current_user.name %></div> 
+	<div class="welcome">Welcome, <%= current_user.name %></div> 
+    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+
 <%end%>
 
 <%= form_tag users_path, :method => 'get' do %>
@@ -14,11 +16,13 @@
 <% end %>
 </div>
 
-
-<%if logged_in? %>
-	 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
-<%else%>
-	 
-	<%= link_to'<button type="button">Login</button>'.html_safe, login_path,{:class=>"link"}%>
-<%end%>
-
+<div class="middle">
+	<div style="padding:10px 10px 10px 10px;">
+	<%if logged_in? %>
+		 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
+	<%else%>
+		 
+		<%= link_to'<button type="button">Login</button>'.html_safe, login_path,{:class=>"link"}%>
+	<%end%>
+	</div>
+</div>
