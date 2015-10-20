@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     if search.present?
       where('name LIKE ?', "%#{search}%")
     else
-      all
+      all.order(:name)
     end
   end
   
