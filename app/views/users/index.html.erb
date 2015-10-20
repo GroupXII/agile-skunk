@@ -2,11 +2,19 @@
 
 <div class="top_bar">
   <div id="title">flickfindr</div>
+<<<<<<< HEAD
   <%if logged_in? %>
   <div class="welcome">Welcome, <%= current_user.name %></div>
   <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
   <% end %>
+=======
+<%if logged_in? %>
+  <div class="welcome">Welcome, <%= current_user.name %></div>
+  <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+<%end%>
+>>>>>>> 2b5eb49aee09e51eb7ecc2fb1e998f8e5b1cd0c5
 </div>
+
 <!-- END OF HEADER  -->
 
 <h1>Editing User</h1>
