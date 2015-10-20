@@ -17,3 +17,11 @@
 	margin-top: 50px;
 	color: white;
 }
+
+//Error message for incorrect login
+.login-invalid{
+	position: absolute;
+	color:red;
+	margin: 5em 28em;
+	font-size: 2.5em
+}
