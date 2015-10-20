@@ -35,3 +35,14 @@
 	float:left;
 }
 
+.middle{
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	float: middle;
+	margin: 20px 20% 20px 20%;
+	height: auto;
+	display: block;
+	background-color: #D8D8D8;
+
+}
+

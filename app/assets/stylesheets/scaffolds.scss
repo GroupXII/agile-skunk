@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: WhiteSmoke;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -21,15 +21,17 @@ pre {
 }
 
 a {
-  color: #000;
+
+  color: white;
+  text-decoration: none;
 
   &:visited {
-    color: #666;
+
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #993366;
+    background-color: none;
   }
 }
 
@@ -72,4 +74,9 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+#logo{
+  color: #FFFFFF;
+  text-decoration: none;
 }

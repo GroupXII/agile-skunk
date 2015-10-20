@@ -37,4 +37,13 @@ class User < ActiveRecord::Base
   def forget
   	update_attribute(:remember_digest, nil)
   end
+
+  def self.search(search)
+    if search.present?
+      where('name LIKE ?', "%#{search}%")
+    else
+      all.order(:name)
+    end
+  end
+  
 end
