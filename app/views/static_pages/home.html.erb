@@ -2,5 +2,14 @@
   <div id="title">flickfindr</div>
 </div>
 
-<%= link_to "Login", login_path , {:class=>"link"} %>
+<%if logged_in? %>
+
+	 <div class="welcome">Welcome, <%= current_user.name %></div>
+	 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
+
+<%else%>
+	 
+	<button class= "btn btn-primary"> <%= link_to "Login", login_path,{:class=>"link"}%></button>
+<%end%>
+
 
