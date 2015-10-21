@@ -37,7 +37,8 @@ input {
 
 
 .link{
-    
+	
+	color: blue;    
 	&:hover{
 		color: #993366;
 		
@@ -45,6 +46,14 @@ input {
 	}
 }
 
+.loginLink {
+		
+		&:hover{
+			color: #993366;
+		
+		background-color: transparent;
+	}
+}
 .profile_left{
 
 	margin-left: 50px;

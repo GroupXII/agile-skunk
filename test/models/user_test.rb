@@ -12,16 +12,15 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
   	assert_not @user.authenticated?('')
   end
-# SYNTAX ERROR WHEN TESTING!!!!!!!
 
-=begin
+
   	test "create user1" do 
-|		user= User.new(user:"test1", email:"test1@email.com")
+		user= User.new(user:"test1", email:"test1@email.com")
 	end
 
 	test "same user1" do 
-|		user= User.new(user:"test1", email:"test1@email.com")
+		user= User.new(user:"test1", email:"test1@email.com")
 		assert user.invaild?
 	end
-=end	
+	
 end
