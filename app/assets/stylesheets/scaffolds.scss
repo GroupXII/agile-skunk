@@ -22,16 +22,29 @@ pre {
 
 a {
 
+  color: blue;
+  text-decoration: underline;
+
+  &:visited {
+    color: purple;
+  }
+
+  &:hover {
+    color: red;
+  }
+}
+
+a.loginLink {
+
   color: white;
   text-decoration: none;
 
   &:visited {
-
+    
   }
 
   &:hover {
-    color: #993366;
-    background-color: none;
+    color: red;
   }
 }
 

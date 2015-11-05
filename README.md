@@ -8,3 +8,10 @@ Flickfindr is developed by the following students of the CMPT276 class of Fall 2
 	Seleena Hua
 	Gurpaul Gill
 	Gary Qu
+	
+	
+	
+	
+	
+Personal sidenotes:
+a.hover { #993366
