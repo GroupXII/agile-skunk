@@ -6,21 +6,40 @@
 <% else %>
 	<div id = "logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
 <%end%>
-
-<%= form_tag users_path, :method => 'get' do %>
-
-	<p id="searchbar">
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search", :name => nil %>
-	</p>
-<% end %>
-</div>
-
-
 <div class="middle">
-	<div style="padding:10px 10px 10px 10px;">
-	<%if logged_in? %>
-		 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
-	<%end%>
+	<div class="top_bar">
+  		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
+
+		<%if logged_in? %>
+			<div class="welcome">Welcome, <%= current_user.name %></div>
+   		    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+		<% else %>
+			<div id = "logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+		<%end%>
+		<%= form_tag users_path, :method => 'get' do %>
+
+		<p id="searchbar">
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name => nil %>
+		</p>
+  <!-- <% end %> what is this for??-->
 	</div>
+
+
+
+	<div style="padding:10px 10px 10px 10px;">
+		<%if logged_in? %>
+			 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
+		<%end%>
+	</div>
+		<!-- Work in progress -->
+		<div class="sideInfo">
+			<br>
+			&nbsp;Top 10 Rated Movies <!-- &nbsp adds a single space -->
+			<!-- Most likely adding a table here -->
+			<br>
+			<br>
+			&nbsp;Upcoming Movies
+			<!-- another table here -->
+		</div>
 </div>

@@ -26,7 +26,7 @@ namespace :db do
                       :numVotes => movieData[i]['vote_count'])
     end
 =end
-    #populating popular movies
+  #populating popular movies
     request_query = "popular" + "?api_key="+ api_key
     url = "#{request_uri}#{request_query}"
 

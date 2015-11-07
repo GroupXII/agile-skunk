@@ -1,0 +1,24 @@
+//will only put movie posters(main area)
+//top rated movies list and coming soon movies stuff (right side)
+//in here
+
+.middle{
+	height: 80em;
+	width: 80em;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: #BCBCBC;
+	margin: auto;
+	position: relative;
+}
+
+.sideInfo {
+	background: #A1A1A1;
+	height: 30em;
+	width: 20em;
+	display: inline-block;
+	float: right;
+	margin-right: 1em;
+	border-left: 2px solid black;
+	border-right: 2px solid black;	
+}

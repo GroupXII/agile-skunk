@@ -13,13 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
- .top_bar{
- 	background-color: #555555;
- 	width:100%;
- 	height: 120px;
- 	margin-top: 0px;
-
+.top_bar{
+ 	background-color: #363636;
+ 	width:80em;
+ 	height: 7.5em;
+ 	margin: auto;
  }
 
 .header{ /*used by both sessions and user models*/
@@ -29,24 +27,25 @@
 }
 
 #title{
-	padding-top: 80px;
+	padding-bottom: 0.5em;
 	color: white;
 	font-size: 50px;
 	float:left;
 }
 
 .middle{
+	height: 90em;
+	width: 80em;
+	border-bottom: 3px solid black;
+ 	border-right: 3px solid black;
+ 	border-left: 3px solid black;
 	border-radius: 5px;
-	padding: 10px 10px 10px 10px;
-	float: middle;
-	margin: 20px 20% 20px 20%;
-	height: auto;
-	display: block;
-	background-color: #D8D8D8;
-
+	background-color: #BCBCBC;
+	margin: auto;
+	position: relative;
 }
 
- #logLoc{/*location of login button*/
+#logLoc{/*location of login button*/
  	font-size: 20px;
  	float: right;
  	clear: right;
@@ -54,4 +53,23 @@
  	margin-top: 0.5em;
 }
 
+body {
+  background-color: #1B1B1B;
+  //font-family: verdana, arial, helvetica, sans-serif;
+  //font-size: 13px;
+}
 
+#logo{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a.loginLink {
+
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
+}
