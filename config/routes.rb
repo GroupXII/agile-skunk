@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :movies
   root'static_pages#home'
 
   get 'search' => 'users#index'

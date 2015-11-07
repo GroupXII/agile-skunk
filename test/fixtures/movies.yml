@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  imdbID: MyString
+  tmdbID: 1
+  synopsis: MyString
+  posterPath: MyString
+  releaseDate: MyString
+  status: MyString
+  averageScore: 1
+  numVotes: 1
+
+two:
+  title: MyString
+  imdbID: MyString
+  tmdbID: 1
+  synopsis: MyString
+  posterPath: MyString
+  releaseDate: MyString
+  status: MyString
+  averageScore: 1
+  numVotes: 1
