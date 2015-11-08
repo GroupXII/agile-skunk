@@ -12,13 +12,19 @@
 	position: relative;
 }
 
+.leftColumn {
+	display: table-cell;
+	padding-right: 1em;
+	padding-left: 1em;
+	height: 80em;
+	width: 40em;
+	background: #A1A1A1;
+}
 .sideInfo {
 	background: #A1A1A1;
-	height: 30em;
-	width: 20em;
-	display: inline-block;
-	float: right;
-	margin-right: 1em;
+	height: 80em;
+	width: 40em;
+	display: table-cell;
+	padding-left: 1em;
 	border-left: 2px solid black;
-	border-right: 2px solid black;	
 }

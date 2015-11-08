@@ -27,19 +27,31 @@
 
 
 
-	<div style="padding:10px 10px 10px 10px;">
+	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 		<%if logged_in? %>
-			 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %>
+		<!--What is the purpose of the {:class}?-->
+			 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %> 
 		<%end%>
 	</div>
-		<!-- Work in progress -->
-		<div class="sideInfo">
+	
+	<br>
+	
+	<div class="leftColumn">
+		<h2>Hottest</h2>
+		<% 20.times do %>
 			<br>
-			&nbsp;Top 10 Rated Movies <!-- &nbsp adds a single space -->
-			<!-- Most likely adding a table here -->
+		<% end %>
+		<h2>Recently Watched/Viewed</h2>
+	</div>
+
+	<!-- Work in progress -->
+	<div class="sideInfo">
+		<h2>Upcoming</h2><!-- &nbsp adds a single space -->
+		<!-- Most likely adding a table here -->
+		<% 20.times do %>
 			<br>
-			<br>
-			&nbsp;Upcoming Movies
-			<!-- another table here -->
-		</div>
+		<% end %>
+		<h2>Recommendations</h2>
+		<!-- another table here -->
+	</div>
 </div>
