@@ -21,14 +21,19 @@
 		</p>
 
 	<h2>Favorites</h2>
-    <ul></ul>
+    <ul>
+    	<li><% @user.favorites %></li>
+    
+    </ul>
 
+	
 	<h2>Friends</h2>
     <ul></ul>
 
- 	<div class="bottom">
-	<%= link_to 'Edit', edit_user_path(@user) %> |
-	<%= link_to 'Home', root_path %>
-	<%= link_to 'Index', users_path %>
+	 	<div class="bottom">
+		<%= link_to 'Edit', edit_user_path(@user) %> |
+		<%= link_to 'Home', root_path %> |
+		<%= link_to 'Index', users_path %>
 	</div>
-<div>
+	</div>
+</div>

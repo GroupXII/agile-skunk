@@ -1,6 +1,15 @@
+<div class="top_bar">
+  <div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
+<%if logged_in? %>
+	<div class="welcome">Welcome, <%= current_user.name %></div>
+    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+<% else %>
+	<div id = "logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+<%end%>
+
 <p id="notice"><%= notice %></p>
 <h1>Listing Movies</h1>
-
+<div style="background-color:white;">
 <table>
   <thead>
     <tr>
@@ -30,6 +39,7 @@
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie ,type: "favorite"), method: :post%></td> <%end%>
       </tr>
     <% end %>
   </tbody>
@@ -38,3 +48,4 @@
 <br>
 
 <%= link_to 'New Movie', new_movie_path %>
+</div>

@@ -1,11 +1,3 @@
-<div class="top_bar">
-  <div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
-<%if logged_in? %>
-	<div class="welcome">Welcome, <%= current_user.name %></div>
-    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
-<% else %>
-	<div id = "logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
-<%end%>
 <div class="middle">
 	<div class="top_bar">
   		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
@@ -25,7 +17,7 @@
   <!-- <% end %> what is this for??-->
 	</div>
 
-
+<%= link_to "Movies", movies_path %>
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 		<%if logged_in? %>

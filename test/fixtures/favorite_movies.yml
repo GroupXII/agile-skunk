@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tmdbID: MyString
+  integer: MyString
+  email: MyString
+  string: MyString
+
+two:
+  tmdbID: MyString
+  integer: MyString
+  email: MyString
+  string: MyString

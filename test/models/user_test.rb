@@ -24,3 +24,12 @@ class UserTest < ActiveSupport::TestCase
 	end
 	
 end
+
+
+  test "favourites testing" do
+      user= User.new(user:"test3", email:"test3@email.com")
+      @movie = Movie.find(1)
+      user.favorite << @movie
+      
+      assert response :success
+  end 
