@@ -3,10 +3,10 @@
   		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
 
 		<%if logged_in? %>
-			<div class="welcome">Welcome, <%= current_user.name %></div>
-   		    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+			<!--<div class="welcome">Welcome, <%= current_user.name %></div><-->
+   		    <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
 		<% else %>
-			<div id = "logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+			<div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
 		<%end%>
 		<%= form_tag users_path, :method => 'get' do %>
 
@@ -14,31 +14,75 @@
 			<%= text_field_tag :search, params[:search] %>
 			<%= submit_tag "Search", :name => nil %>
 		</p>
-  <!-- <% end %> what is this for??-->
+  	   <% end %>
 	</div>
+
 
 <%= link_to "Movies", movies_path %>
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
+
 		<%if logged_in? %>
-		<!--What is the purpose of the {:class}?-->
+		<!--What is the purpose of the {:class}? basically does the same thing as <div class="link"></div>-->
 			 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %> 
 		<%end%>
-	</div>
-	
 	<br>
 	
 	<div class="leftColumn">
 		<h2>Hottest</h2>
+		<div class="hottest">
+			<div class="spacing">
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYxGcPfqYK-tTFRFqZFMJ761adVBqV0_3N-cVltJcod_PfkTql" alt="dark knight"/>
+						<span class="text">The Dark Knight</span>
+					</a>
+				</div>
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpU0mfaphHfdRHAAGxbPCh8UlLn6jYL52a-YYFRUHZPt9MFZK" alt="movie"/>
+						<span class="text">Shutter Island</span>
+					</a>
+				</div>
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYxGcPfqYK-tTFRFqZFMJ761adVBqV0_3N-cVltJcod_PfkTql" alt="shutter island"/>
+						<span class="text">The Dark Knight</span>
+					</a>
+				</div>
+			</div>
+		</div>
 		<% 20.times do %>
 			<br>
 		<% end %>
-		<h2>Recently Watched/Viewed</h2>
+		<h2>Upcoming</h2>
+		<div class="upcoming">
+					<div class="spacing">
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYxGcPfqYK-tTFRFqZFMJ761adVBqV0_3N-cVltJcod_PfkTql" alt="dark knight"/>
+						<span class="text">The Dark Knight</span>
+					</a>
+				</div>
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZpU0mfaphHfdRHAAGxbPCh8UlLn6jYL52a-YYFRUHZPt9MFZK" alt="movie"/>
+						<span class="text">Shutter Island</span>
+					</a>
+				</div>
+				<div class="poster">
+					<a href="http://google.ca">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYxGcPfqYK-tTFRFqZFMJ761adVBqV0_3N-cVltJcod_PfkTql" alt="shutter island"/>
+						<span class="text">The Dark Knight</span>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- Work in progress -->
 	<div class="sideInfo">
-		<h2>Upcoming</h2><!-- &nbsp adds a single space -->
+		<h2>Recently Viewed</h2><!-- &nbsp adds a single space -->
 		<!-- Most likely adding a table here -->
 		<% 20.times do %>
 			<br>
