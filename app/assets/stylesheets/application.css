@@ -22,7 +22,7 @@
 
 .header{ /*used by both sessions and user models*/
 	margin-top: 50px;
-	margin-left:30%; 
+	margin-left: 30%; 
 	display:inline-block;
 }
 
@@ -40,7 +40,7 @@
  	border-right: 3px solid black;
  	border-left: 3px solid black;
 	border-radius: 5px;
-	background-color: #BCBCBC;
+	background-color: #A1A1A1;
 	margin: auto;
 	position: relative;
 }
