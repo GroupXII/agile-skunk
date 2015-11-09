@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root'static_pages#home'
 
-  get 'search' => 'users#index'
+  get 'search' => 'movies#index'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
