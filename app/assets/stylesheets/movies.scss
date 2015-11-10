@@ -1,3 +1,23 @@
 // Place all the styles related to the Movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.movImage {
+	position: absolute;
+	float: left;
+}
+
+.movSpacing {
+	position: relative;
+	margin-top: 10em;
+	margin-left: 1em;
+}
+
+.movDescrip {
+	position: relative;
+	left: -1.5em;
+	font-family: Verdana, sans-serif;
+	font-size: 20px;
+	width: 35em;
+	float: right;
+}

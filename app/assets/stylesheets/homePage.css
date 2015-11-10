@@ -32,7 +32,7 @@
 .hottest {
 	background: #A1A1A1;
 	position: absolute;
-	height: 19em;
+	height: 20em;
 	width: 45em;
 	border: 1px solid gray;
 	overflow: hidden;
@@ -50,32 +50,36 @@
 }
 
 img {
-	//max-width: 100%;
+	max-width: 100%;
 	display: block;
 }
 
 .spacing {
-	position: absolute;
-	top: 1em;
-	left: 1em;
+	position: relative;
+	top: 0.8em;
+	left: 0.7em;
 
-	width: 195px; /*increase space between posters*/
+	width: 195px; /*increase poster width*/
+}
+
+.posterSpace{
+	margin-left: 3px; /* increase space betwen posters*/
 }
 
 .poster { /*increase size of picture*/
 	width: 100%;
 	height: 100%;
 	display: inline-block;
-	//position: relative;
+	position: relative;
 }
 
 .text {
 	position: relative;
-	bottom: 2.5em;
+	bottom: 2.57em;
 	left: 0;
 	display: inline-block;
 	padding: 15px 5px 5px;
-	width: 170px;
+	width: 183px;
 	color: #FFFFFF;
 	font-size: 15px;
 	text-shadow: rgba(0,0,0,0.8) 1px 1px 0;

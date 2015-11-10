@@ -1,47 +1,73 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <img src = "<%= @movie.posterPath %>" >
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+<div class="middle">
+  <div class="top_bar">
+      <div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
 
+      <%if logged_in? %>
+    <!--<div class="welcome">Welcome, <%= current_user.name %></div><-->
+        <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
+      <% else %>
+       <div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+      <%end%>
 
-<p>
-  <strong>Tmdbid:</strong>
-  <%= @movie.tmdbID %>
-</p>
+      <%= form_tag movies_path, :method => 'get' do %>
+        <p id="searchbar">
+         <%= text_field_tag :search, params[:search] %>
+         <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+  </div>
 
-<p>
-  <strong>Synopsis:</strong>
-  <%= @movie.synopsis %>
-</p>
+  <p id="notice"><%= notice %></p>
+<div class="movSpacing">
+  <div class="movImage">
+    <p>
+      <img src = "<%= @movie.posterPath %>" >
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Posterpath:</strong>
-  <%= @movie.posterPath %>
-</p>
+    <div class="movDescrip">
+      <p>
+        <strong>Title:</strong>
+        <%= @movie.title %>
+      </p>
 
-<p>
-  <strong>Releasedate:</strong>
-  <%= @movie.releaseDate %>
-</p>
+<!--      <p>
+        <strong>Tmdbid:</strong>
+        <%= @movie.tmdbID %>
+      </p> -->
 
-<p>
-  <strong>Status:</strong>
-  <%= @movie.status %>
-</p>
+      <p>
+       <strong>Synopsis:</strong>
+       <%= @movie.synopsis %>
+      </p>
 
-<p>
-  <strong>Averagescore:</strong>
-  <%= @movie.averageScore %>
-</p>
+      <p>
+        <strong>Posterpath:</strong>
+        <%= @movie.posterPath %>
+      </p>
 
-<p>
-  <strong>Numvotes:</strong>
-  <%= @movie.numVotes %>
-</p>
+      <p>
+        <strong>Release Date:</strong>
+        <%= @movie.releaseDate %>
+      </p>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<!--      <p>
+        <strong>Status:</strong>
+        <%= @movie.status %>
+      </p> -->
+
+      <p>
+        <strong>Average Score:</strong>
+        <%= @movie.averageScore %>
+      </p>
+
+      <p>
+       <strong>Votes:</strong>
+        <%= @movie.numVotes %>
+      </p>
+    <!--<%= link_to 'Edit', edit_movie_path(@movie) %> | -->
+    <%= link_to 'Back', movies_path %>
+    </div>
+</div>
