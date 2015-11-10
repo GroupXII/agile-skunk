@@ -17,7 +17,7 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Now Playing',
                       :synopsis => movieData[i]['overview'],
                       :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
@@ -35,7 +35,7 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Popular',
                       :synopsis => movieData[i]['overview'],
                       :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
@@ -53,7 +53,7 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Top Rated',
                       :synopsis => movieData[i]['overview'],
                       :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
@@ -71,7 +71,7 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Upcoming',
                       :synopsis => movieData[i]['overview'],
                       :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
