@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .movImage {
 	position: absolute;
 	float: left;
@@ -21,3 +22,9 @@
 	width: 35em;
 	float: right;
 }
+
+tr{
+ 	border: 2px;
+ 	border-color:black;
+ }
+ 
