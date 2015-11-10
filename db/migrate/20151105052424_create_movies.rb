@@ -1,6 +1,6 @@
 class CreateMovies < ActiveRecord::Migration
   def change
-    create_table :Movies do |t|
+    create_table :movies do |t|
       t.string :title
       t.integer :tmdbID
       t.string :synopsis

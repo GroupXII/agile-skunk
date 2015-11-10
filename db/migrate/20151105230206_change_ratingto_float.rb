@@ -1,6 +1,6 @@
 class ChangeRatingtoFloat < ActiveRecord::Migration
   def change
-      remove_column :Movies, :averageScore
-      add_column :Movies, :averageScore, :decimal
+      remove_column :movies, :averageScore
+      add_column :movies, :averageScore, :decimal
   end
 end
