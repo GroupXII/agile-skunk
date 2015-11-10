@@ -15,20 +15,16 @@
 				<%= submit_tag "Search", :name => nil %>
 			</p>
   	   <% end %>
-
+		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
+		<%if logged_in? %>
+			<div class="btn" style="margin-left:8em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
+		<%end%>
 	</div>
-
-
-<%= link_to "Movies", movies_path %>
-
 
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 
-		<%if logged_in? %>
-		<!--What is the purpose of the {:class}? basically does the same thing as <div class="link"></div>-->
-			 <%=link_to "Profile", user_path(current_user), {:class=>"link"} %> 
-		<%end%>
+	
 	<br>
 	
 	<div class="leftColumn">

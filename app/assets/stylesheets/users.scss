@@ -5,14 +5,14 @@
 .logout{
 	postion: relative;
 	color:white;
-	margin-right: 5px;
+	margin-right: -4.5em;
 	margin-left: 95%;
-	padding-top: 5px;
+	padding-top: 0.1em;
 }
 
 
 .header{ /*used by both sessions and user models*/
-	margin-left:30%; 
+	margin-left:1em; 
 	display:inline-block;
 }
 
@@ -56,5 +56,12 @@ input {
 }
 .profile_left{
 
-	margin-left: 50px;
+	margin: 0em 3em 0em 3em;
+	padding: 2em 2em 2em 2em;
+	background-color: #E0E0E0;
+}
+
+.section{
+	
+	margin-top: 1em;
 }

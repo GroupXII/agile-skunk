@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 .top_bar{
  	background-color: #363636;
  	width:80em;
@@ -70,6 +71,13 @@ a.loginLink {
   text-decoration: none;
 
   &:hover {
-    color: red;
+    color: #993366;
   }
+}
+
+
+.bottom{
+	background-color: #363636;
+ 	width:80em;
+ 	margin-bottom: 10em;
 }
