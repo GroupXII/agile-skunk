@@ -30,9 +30,9 @@ class MoviesController < ApplicationController
 
   # POST /movies
   # POST /movies.json
-  
-  def favorite 
-    
+
+  def favorite
+
     type=params[:type]
     if type == "favorite"
       #movie = Movie.find(params[:id])
@@ -49,7 +49,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new # from form will only fill ID right now
-    
+
     respond_to do |format|
     if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
@@ -85,6 +85,13 @@ class MoviesController < ApplicationController
     end
   end
 
+  def getPoster
+    request_uri = "http://image.tmdb.org/t/p/w500"
+    request_query = @movie.posterPath
+    url = "#{request_uri}#{request_query}"
+    return url
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

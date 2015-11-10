@@ -7,7 +7,6 @@ namespace :db do
 
     request_uri = 'https://api.themoviedb.org/3/movie/'
     #populating now playing movies
-=begin
     request_query = "now_playing" + "?api_key="+ api_key
     url = "#{request_uri}#{request_query}"
 
@@ -18,15 +17,14 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Now Playing',
                       :synopsis => movieData[i]['overview'],
-                      :posterPath => movieData[i]['poster_path'],
+                      :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
                       :averageScore => movieData[i]['vote_average'],
                       :numVotes => movieData[i]['vote_count'])
     end
-=end
-  #populating popular movies
+    #populating popular movies
     request_query = "popular" + "?api_key="+ api_key
     url = "#{request_uri}#{request_query}"
 
@@ -37,14 +35,13 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Popular',
                       :synopsis => movieData[i]['overview'],
-                      :posterPath => movieData[i]['poster_path'],
+                      :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
                       :averageScore => movieData[i]['vote_average'],
                       :numVotes => movieData[i]['vote_count'])
     end
-=begin
     #populating top rated on tmdb
     request_query = "top_rated" + "?api_key="+ api_key
     url = "#{request_uri}#{request_query}"
@@ -56,14 +53,13 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Top Rated',
                       :synopsis => movieData[i]['overview'],
-                      :posterPath => movieData[i]['poster_path'],
+                      :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
                       :averageScore => movieData[i]['vote_average'],
                       :numVotes => movieData[i]['vote_count'])
     end
-
     #populating upcoming movies
     request_query = "upcoming" + "?api_key="+ api_key
     url = "#{request_uri}#{request_query}"
@@ -75,13 +71,12 @@ namespace :db do
     for i in (0..movieData.length-1) do
       m = Movie.create(:tmdbID => movieData[i]['id'],
                       :title => movieData[i]['title'],
-                      :status => movieData[i]['status'],
+                      :status => 'Upcoming',
                       :synopsis => movieData[i]['overview'],
-                      :posterPath => movieData[i]['poster_path'],
+                      :posterPath => "http://image.tmdb.org/t/p/w500" + "#{movieData[i]['poster_path']}",
                       :releaseDate => movieData[i]['release_date'],
                       :averageScore => movieData[i]['vote_average'],
                       :numVotes => movieData[i]['vote_count'])
     end
-=end
   end
 end
