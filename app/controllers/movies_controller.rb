@@ -6,6 +6,8 @@ class MoviesController < ApplicationController
 
   api_key = '1bd66d1dc550b5a4cc3a9f2e2210eae9' # this is probably not a good idea.
   request_uri = 'https://api.themoviedb.org/3/movie/'
+  
+  
   # GET /movies
   # GET /movies.json
   def index
