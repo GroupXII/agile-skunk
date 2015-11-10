@@ -1,3 +1,26 @@
+<div class="middle">
+	<div class="top_bar">
+  		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
+
+		<%if logged_in? %>
+		<% if false %>
+			<!--<div class="welcome">Welcome, <%= current_user.name %></div><-->
+		<%end%>
+   		    <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
+		<% else %>
+			<div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+		<%end%>
+
+		<%= form_tag movies_path, :method => 'get' do %>
+			<p id="searchbar">
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", :name => nil %>
+			</p>
+  	   <% end %>
+		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
+
+	</div>
+<div class="middle">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -45,3 +68,4 @@
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+</div>
