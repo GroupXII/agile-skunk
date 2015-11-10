@@ -10,6 +10,9 @@
 <div class="middle">
 	<h1 class="header" style="margin-left:1em;"> PROFILE </h1>
 		<div class="profile_left">
+			<div style="display:inline-block; max-width:50%;">
+			<img id="pic" src= "http://i936.photobucket.com/albums/ad204/carmenmbonilla/wildlife%20-%20%20natures%20landscape/zzanimalsjdkkjkds_zps3d92f116-1.jpg"/>
+			</div>
 			<p>
 				<strong>Name:</strong>
 				<%= @user.name %>
@@ -30,8 +33,8 @@
 		    </ul>
 		  </div>
 		<div class="bottom">
-		<div class= "btn" style="margin-left:2em;"><%= link_to 'Edit', edit_user_path(@user) , :id => "nav-btn"%></div> 
-		<div class= "btn" style="margin-left:4em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> 
+		<div class= "btn" style="margin-left:0em;"><%= link_to 'Edit', edit_user_path(@user) , :id => "nav-btn"%></div> 
+		<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> 
 		<div class= "btn" style="margin-left:7em;"><%= link_to 'Index', users_path, :id => "nav-btn" %></div>
 		</div>
   </div>
