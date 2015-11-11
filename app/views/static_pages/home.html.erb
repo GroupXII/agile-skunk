@@ -17,42 +17,41 @@
   	   <% end %>
 		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
 		<%if logged_in? %>
-<<<<<<< HEAD
+
 			<div class="btn" style="margin-left:10em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
 		<%end%>
-	</div>
-
-<!--<%= link_to "Movies", movies_path %>-->
-=======
-			<div class="btn" style="margin-left:9em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
-		<%end%>
+		
 	</div>
 
 
->>>>>>> da8b3bc218d1c158e78249a9ff617c935370312a
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 	<br>
 
-
+	<% @movie = Movie.first %>
 	<div class="leftColumn">
 		<h2>Hottest</h2>
 		<div class="hottest">
 			<div class="spacing">
+				
 				<div class="poster">
-					<a href="/movies/22">
-						<img src="http://image.tmdb.org/t/p/w500/7SGGUiTE6oc2fh9MjIk5M00dsQd.jpg " alt="Ant-man"/>
-						<span class="text">Ant-man</span>
+					<%= link_to movie_path(@movie) do%>
+						<img src=<%@movie.posterPath%> alt="Ant-man"/>
+						<span class="text"><%=@movie.title%></span>
 					</a>
+					<%end%>
 				</div>
+					<% @movie = Movie.find(2) %>
 				<div class="poster">
 						<div class="posterSpace">
-						<a href="/movies/37">
-							<img src="http://image.tmdb.org/t/p/w500/t90Y3G8UGQp0f0DrP60wRu9gfrH.jpg" alt="Avengers: Age of Ultron"/>
-							<span class="text">Avengers: Age of Ultron</span>
+						<%= link_to movie_path(@movie) do%>
+							<img src=<%@movie.posterPath%> alt="Avengers: Age of Ultron"/>
+							<span class="text"><%=@movie.title%></span>
 						</a>
 					</div>
+					<%end%>
 				</div>
+				
 				<div class="poster">
 					<div class="posterSpace">
 						<a href="/movies/1">
@@ -61,6 +60,7 @@
 						</a>
 					</div>
 				</div>
+				
 				<div class="poster">
 					<div class="posterSpace">
 						<a href="/movies/2">
