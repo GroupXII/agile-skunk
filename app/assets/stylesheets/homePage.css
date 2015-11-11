@@ -12,6 +12,7 @@
 	position: relative;
 }
 
+/*
 .leftColumn {
 	display: table-cell;
 	padding-right: 1em;
@@ -19,7 +20,9 @@
 	height: 80em;
 	width: 70em;
 	background: #A1A1A1;
-}
+}*/
+
+/*
 .sideInfo {
 	background: #A1A1A1;
 	height: 80em;
@@ -28,12 +31,13 @@
 	padding-left: 1em;
 	border-left: 1px solid gray;
 }
+*/
 
 .hottest {
 	background: #A1A1A1;
 	position: absolute;
 	height: 20em;
-	width: 45em;
+	width: 78.5em;
 	border: 1px solid gray;
 	overflow: hidden;
     white-space: nowrap;
@@ -43,7 +47,7 @@
 	background: #A1A1A1;
 	position: absolute;
 	height: 38em;
-	width: 45em;
+	width: 39em;
 	border: 1px solid gray;
 	overflow: hidden;
     white-space: nowrap;
@@ -58,8 +62,6 @@ img {
 	position: relative;
 	top: 0.8em;
 	left: 0.7em;
-
-	width: 195px; /*increase poster width*/
 }
 
 .posterSpace{
@@ -70,18 +72,20 @@ img {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
+	width: 195px;
 	position: relative;
 }
 
 .text {
-	position: relative;
-	bottom: 2.57em;
-	left: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0.5em;
 	display: inline-block;
 	padding: 15px 5px 5px;
-	width: 183px;
+	width: 179px;
 	color: #FFFFFF;
 	font-size: 15px;
+	line-height: 1.2em;
 	text-shadow: rgba(0,0,0,0.8) 1px 1px 0;
 	font-family: verdana, arial, sans-serif;
 
