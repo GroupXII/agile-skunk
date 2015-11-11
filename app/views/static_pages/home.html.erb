@@ -17,11 +17,19 @@
   	   <% end %>
 		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
 		<%if logged_in? %>
+<<<<<<< HEAD
 			<div class="btn" style="margin-left:10em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
 		<%end%>
 	</div>
 
 <!--<%= link_to "Movies", movies_path %>-->
+=======
+			<div class="btn" style="margin-left:9em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
+		<%end%>
+	</div>
+
+
+>>>>>>> da8b3bc218d1c158e78249a9ff617c935370312a
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 	<br>
@@ -143,4 +151,7 @@
 		<% end %>
 		<h2>Recommendations</h2>>
 	</div> -->
+</div>
+<div id="bottom">
+	<%= link_to "About", about_path %>
 </div>

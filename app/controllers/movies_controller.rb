@@ -51,7 +51,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new # from form will only fill ID right now
 
     respond_to do |format|
-    if @movie.save
+      if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
@@ -100,7 +100,7 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :imdbID, :tmdbID, :synopsis, :genres, :posterPath, :releaseDate, :status, :averageScore, :numVotes)
+      params.require(:movie).permit(:title, :tmdbID, :synopsis, :genres, :posterPath, :releaseDate, :status, :averageScore, :numVotes)
     end
 
 end
