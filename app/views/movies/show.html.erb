@@ -21,55 +21,59 @@
 		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
 
 	</div>
-<div class="middle">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <img src = "<%= @movie.posterPath %>" >
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
-
-
-<p>
-  <strong>Tmdbid:</strong>
-  <%= @movie.tmdbID %>
-</p>
-
-<p>
-  <strong>Synopsis:</strong>
-  <%= @movie.synopsis %>
-</p>
-
-<p>
-  <strong>Posterpath:</strong>
-  <%= @movie.posterPath %>
-</p>
-
-<p>
-  <strong>Releasedate:</strong>
-  <%= @movie.releaseDate %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @movie.status %>
-</p>
-
-<p>
-  <strong>Averagescore:</strong>
-  <%= @movie.averageScore %>
-</p>
-
-<p>
-  <strong>Numvotes:</strong>
-  <%= @movie.numVotes %>
-</p>
+    <div class="movSpacing">
+      <div class = "movImage">
+        <p>
+          <img src = "<%= @movie.posterPath %>" >
+        </p>
+      </div>
+    </div>
+  
+  <div class="movDescrip">
+    <p>
+      <strong>Title:</strong>
+      <%= @movie.title %>
+    </p>
 
 
-<%= link_to 'Back', movies_path %>
+  <p>
+    <strong>Tmdbid:</strong>
+    <%= @movie.tmdbID %>
+  </p>
+
+  <p>
+    <strong>Synopsis:</strong>
+    <%= @movie.synopsis %>
+  </p>
+
+  <p>
+   <strong>Poster Path:</strong>
+   <%= @movie.posterPath %>
+  </p>
+
+  <p>
+    <strong>Release Date:</strong>
+    <%= @movie.releaseDate %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @movie.status %>
+  </p>
+  
+  <p>
+   <strong>Average Score:</strong>
+    <%= @movie.averageScore %>
+  </p>
+
+  <p>
+    <strong>Votes:</strong>
+    <%= @movie.numVotes %>
+  </p>
 
 
-
+    <%= link_to 'Back', movies_path %>
+  </div>
 </div>
