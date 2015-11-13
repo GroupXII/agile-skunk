@@ -16,73 +16,74 @@
 			</p>
   	   <% end %>
 		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
-		<%if logged_in? %>
+		<div class="btn" style="margin-left: 9em"><%= link_to "About", about_path, {:id => "nav-btn"} %></div>
 
-			<div class="btn" style="margin-left:10em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
-		<%end%>
-		
+		<%if logged_in? %>
+			<div class="btn" style="margin-left:12em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
+		<%end%>		
 	</div>
 
 
 
 	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
-	<br>
+	
 
-	<% @movie = Movie.first %>
 	<div class="leftColumn">
 		<h2>Hottest</h2>
 		<div class="hottest">
 			<div class="spacing">
-				
+				<% @movie = Movie.find(1) %>
 				<div class="poster">
 					<%= link_to movie_path(@movie) do%>
-						<img src=" <%@movie.posterPath%> " alt="<%=@movie.title%>"/>
+						<img src=" <%@movie.posterPath%> " alt="Movie Poster"/>
 						<span class="text"><%=@movie.title%></span>
 					</a>
 					<%end%>
 				</div>
-					<% @movie = Movie.find(2) %>
-				<div class="poster">
-						<div class="posterSpace">
-						<%= link_to movie_path(@movie) do%>
-							<img src=" <%@movie.posterPath%> " alt="<%=@movie.title%>"/>
-							<span class="text"><%=@movie.title%></span>
-						</a>
-					</div>
-					<%end%>
-				</div>
-				
+			
+				<% @movie = Movie.find(2) %>
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/1">
-							<img src="http://image.tmdb.org/t/p/w500/1n9D32o30XOHMdMWuIT4AaA5ruI.jpg " alt="Movie Poster"/>
-							<span class="text">007 Spectre</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
-				
+				<% @movie = Movie.find(3) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/2">
-							<img src="http://image.tmdb.org/t/p/w500/5aGhaIHYuQbqlHWvWYqMCnj40y2.jpg " alt="Movie Poster"/>
-							<span class="text">The Martian</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
+					</div>
+				</div>				
+				<% @movie = Movie.find(4) %>				
+				<div class="poster">
+					<div class="posterSpace">
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
+				<% @movie = Movie.find(7) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/28">
-							<img src=" http://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg " alt="Movie Poster"/>
-							<span class="text">Mad Max: Fury Road</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
+				<% @movie = Movie.find(8) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/3">
-							<img src="http://image.tmdb.org/t/p/w500/pCj8zem1NDAODdtvha9WFEB6iWR.jpg " alt="Crimson Peak"/>
-							<span class="text">Crimson Peak</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
 			</div>
@@ -93,51 +94,57 @@
 		<h2>Upcoming</h2>
 		<div class="upcoming">
 			<div class="spacing">
+				<% @movie = Movie.find(1) %>				
 				<div class="poster">
-					<a href="/movies/63">
-						<img src="http://image.tmdb.org/t/p/w500/t5tGykRvvlLBULIPsAJEzGg1ylm.jpg" alt="Movie Poster"/>
-						<span class="text">Heist</span>
-					</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 				</div>
-				<div class="poster">
-						<div class="posterSpace">
-						<a href="/movies/61">
-							<img src="http://image.tmdb.org/t/p/w500/xSE4NBFDzqedwa4AIj99r1Z7ljF.jpg " alt="Movie Poster"/>
-							<span class="text">Creed</span>
-						</a>
-					</div>
-				</div>
+				<% @movie = Movie.find(1) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/74">
-							<img src="http://image.tmdb.org/t/p/w500/AbKa7ANxmui0Jmhh7gV7OSELKIL.jpg " alt="Movie Poster"/>
-							<span class="text">Carol</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
+					</div>
+				</div>
+				<% @movie = Movie.find(1) %>				
+				<div class="poster">
+					<div class="posterSpace">
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
 				<div style="display:block"></div>
-					<div class="poster">
-						<div class="posterSpace">
-						<a href="/movies/60">
-							<img src="http://image.tmdb.org/t/p/w500/rzuK1NL7l7HbrsV3gmOZQDfggEa.jpg" alt="Movie Poster"/>
-							<span class="text">No Way Out</span>
-						</a>
-					</div>
-				</div>
+				<% @movie = Movie.find(1) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/56">
-							<img src="http://image.tmdb.org/t/p/w500/l3tmn2WOAIgLyGP7zcsTYkl5ejH.jpg " alt="Movie Poster"/>
-							<span class="text">The Hunger Games: <br>Mockingjay<br>Part 2</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
+				<% @movie = Movie.find(1) %>				
 				<div class="poster">
 					<div class="posterSpace">
-						<a href="/movies/59">
-							<img src="http://image.tmdb.org/t/p/w500/2ZckiMTfSkCep2JTtZbr73tnQbN.jpg" alt="Movie Poster"/>
-							<span class="text">The Good Dinosaur</span>
-						</a>
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
+					</div>
+				</div>
+				<% @movie = Movie.find(1) %>				
+				<div class="poster">
+					<div class="posterSpace">
+						<%= link_to movie_path(@movie) do %>
+							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
+							<span class="text"><%= @movie.title %></span>
+						<% end %>
 					</div>
 				</div>
 			</div>	
@@ -152,7 +159,5 @@
 		<% end %>
 		<h2>Recommendations</h2>>
 	</div> -->
-</div>
-<div id="bottom">
-	<%= link_to "About", about_path %>
+
 </div>
