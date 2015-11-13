@@ -36,7 +36,7 @@
 				
 				<div class="poster">
 					<%= link_to movie_path(@movie) do%>
-						<img src=<%@movie.posterPath%> alt="Ant-man"/>
+						<img src=" <%@movie.posterPath%> " alt="<%=@movie.title%>"/>
 						<span class="text"><%=@movie.title%></span>
 					</a>
 					<%end%>
@@ -45,7 +45,7 @@
 				<div class="poster">
 						<div class="posterSpace">
 						<%= link_to movie_path(@movie) do%>
-							<img src=<%@movie.posterPath%> alt="Avengers: Age of Ultron"/>
+							<img src=" <%@movie.posterPath%> " alt="<%=@movie.title%>"/>
 							<span class="text"><%=@movie.title%></span>
 						</a>
 					</div>

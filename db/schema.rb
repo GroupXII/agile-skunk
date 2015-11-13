@@ -13,7 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20151108213410) do
 
-  create_table "Movies", force: :cascade do |t|
+  create_table "favorite_movies", force: :cascade do |t|
+    t.integer  "tmdbID"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.integer  "tmdbID"
     t.string   "synopsis"
@@ -24,13 +31,6 @@ ActiveRecord::Schema.define(version: 20151108213410) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.decimal  "averageScore"
-  end
-
-  create_table "favorite_movies", force: :cascade do |t|
-    t.integer  "tmdbID"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
