@@ -31,7 +31,7 @@
         <td><%= movie.title %></td>
         <td><%= movie.tmdbID %></td>
         <td><%= movie.synopsis %></td>
-        <td><img src= "<%= movie.posterPath %>" style="width: 80%; height: 80%"></td>
+        <td><img src= "<%= movie.posterPath %>" style="width: 80%; height: 10%"></td>
         <td><%= movie.releaseDate %></td>
         <td><%= movie.status %></td>
         <td><%= movie.averageScore %></td>
@@ -43,7 +43,7 @@
         <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
         <%end%></td> -->
         
-      <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie ,type: "favorite"), method: :post%></td> <%end%>
+      <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
       </tr>
     <% end %>
   </tbody>

@@ -28,8 +28,13 @@
 			<div class="section">
 			<h2 >Favorites</h2>
 		    <ul>
-		    	<li><% @user.favorites %></li>
+		    	<%= @movie = Movie.find(1) %>
+		    	<%= @movie.title %>
+		    	<% current_user.favorites << @movie %>
+		    	<li><%= current_user.favorites %></li>
 		    
+		    	
+
 		    </ul>
 		  </div>
 		<div class="bottom">

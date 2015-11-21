@@ -16,7 +16,7 @@
 			</p>
   	   <% end %>
 		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
-		<div class="btn" style="margin-left: 9em"><%= link_to "About", about_path, {:id => "nav-btn"} %></div>
+		<div class="btn" style="margin-left: 8em"><%= link_to "About", about_path, {:id => "nav-btn"} %></div>
 
 		<%if logged_in? %>
 			<div class="btn" style="margin-left:12em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
@@ -35,9 +35,8 @@
 				<% @movie = Movie.find(1) %>
 				<div class="poster">
 					<%= link_to movie_path(@movie) do%>
-						<img src=" <%@movie.posterPath%> " alt="Movie Poster"/>
+						<img src="<%=@movie.posterPath%>" alt="Movie Poster"/>
 						<span class="text"><%=@movie.title%></span>
-					</a>
 					<%end%>
 				</div>
 			

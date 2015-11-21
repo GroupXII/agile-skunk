@@ -35,7 +35,7 @@ class MoviesController < ApplicationController
 
     type=params[:type]
     if type == "favorite"
-      #movie = Movie.find(params[:id])
+     # @movie = Movie.find params[:id]
       current_user.favorites << @movie
       response :success
       redirect_to :back, notice: '#{@movie.name} Added to Favorites'
@@ -44,6 +44,8 @@ class MoviesController < ApplicationController
     elsif type == "delete"
       current_user.favorites.delete(@movie)
       redirect_to :back, notice: '#{@movie.name} Deleted from Favorites'
+    else
+      redirect_to :back, notice: 'Did nothing'
     end
   end
 
