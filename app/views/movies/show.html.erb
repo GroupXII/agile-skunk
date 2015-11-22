@@ -1,32 +1,12 @@
 
-<div class="middle">
-	<div class="top_bar">
-  		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
+<div class="middle1">
 
-		<%if logged_in? %>
-		<% if false %>
-			<!--<div class="welcome">Welcome, <%= current_user.name %></div><-->
-		<%end%>
-   		    <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
-		<% else %>
-			<div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
-		<%end%>
-
-		<%= form_tag movies_path, :method => 'get' do %>
-			<p id="searchbar">
-				<%= text_field_tag :search, params[:search] %>
-				<%= submit_tag "Search", :name => nil %>
-			</p>
-  	   <% end %>
-		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
-
-	</div>
   <p id="notice"><%= notice %></p>
 
     <div class="movSpacing">
       <div class = "movImage">
         <p>
-          <img src = "<%= @movie.posterPath %>" >
+          <img src = "<%= @movie.posterPath %>" style="width: 75%; height: 75%;">
         </p>
       </div>
     </div>
@@ -37,43 +17,31 @@
       <%= @movie.title %>
     </p>
 
+    <p>
+      <strong>Synopsis:</strong>
+      <%= @movie.synopsis %>
+    </p>
 
-  <p>
-    <strong>Tmdbid:</strong>
-    <%= @movie.tmdbID %>
-  </p>
+    <p>
+      <strong>Status:</strong>
+      <%= @movie.status %>
+    </p>
+    
+    <p>
+     <strong>Average Score:</strong>
+      <%= @movie.averageScore %>
+    </p>
 
-  <p>
-    <strong>Synopsis:</strong>
-    <%= @movie.synopsis %>
-  </p>
+    <p>
+      <strong>Votes:</strong>
+      <%= @movie.numVotes %>
+    </p>
+    
+    <p>
+      <strong>Release Date:</strong>
+      <%= @movie.releaseDate %>
+    </p>
 
-  <p>
-   <strong>Poster Path:</strong>
-   <%= @movie.posterPath %>
-  </p>
-
-  <p>
-    <strong>Release Date:</strong>
-    <%= @movie.releaseDate %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= @movie.status %>
-  </p>
-  
-  <p>
-   <strong>Average Score:</strong>
-    <%= @movie.averageScore %>
-  </p>
-
-  <p>
-    <strong>Votes:</strong>
-    <%= @movie.numVotes %>
-  </p>
-
-
-    <%= link_to 'Back', movies_path %>
+    <%= link_to 'Movie Index', movies_path %>
   </div>
 </div>

@@ -13,12 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "homePage";
 
 .top_bar{
  	background-color: #363636;
  	width:80em;
  	height: 7.5em;
  	margin: auto;
+ 	border-right: 3px solid black;
+ 	border-left: 3px solid black;
+	border-radius: 5px;
  }
 
 .header{ /*used by both sessions and user models*/
@@ -35,7 +41,6 @@
 }
 
 .middle{
-	height: 90em;
 	width: 80em;
 	border-bottom: 3px solid black;
  	border-right: 3px solid black;
@@ -79,4 +84,13 @@ a.loginLink {
 	background-color: #363636;
  	width:80em;
  	margin-bottom: 10em;
+}
+
+#menu {
+	width:79.6em;
+ 	height: 3.5em;
+ 	margin: auto;
+	background-color: black;
+	z-index: 0;
+	position: absolute;
 }

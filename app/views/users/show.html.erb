@@ -1,11 +1,4 @@
 <!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
-<div class="top_bar">
-  <div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
-  <%if logged_in? %>
-  <div class="welcome">Welcome, <%= current_user.name %></div>
-  <div ><%= link_to 'Log out', logout_path, {method: :delete, :class=>"logout"}%></div>
-  <% end %>
-</div>
 
 <div class="middle">
 	<h1 class="header" style="margin-left:1em;"> PROFILE </h1>
@@ -40,7 +33,7 @@
 		<div class="bottom">
 		<div class= "btn" style="margin-left:0em;"><%= link_to 'Edit', edit_user_path(@user) , :id => "nav-btn"%></div> 
 		<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> 
-		<div class= "btn" style="margin-left:7em;"><%= link_to 'Index', users_path, :id => "nav-btn" %></div>
+		<!--<div class= "btn" style="margin-left:7em;"><%= link_to 'Index', users_path, :id => "nav-btn" %></div>-->
 		</div>
   </div>
 </div>

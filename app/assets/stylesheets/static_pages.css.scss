@@ -1,11 +1,13 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#searchbar{
+#searchBar {
 	float:right;
 	margin-right: 10px;
 	margin-top: 5em;
 	margin-right: -3.8em;
+	position: relative;
+	z-index: 1;
 }
 
 #nav-btn{
