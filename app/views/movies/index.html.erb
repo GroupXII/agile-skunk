@@ -8,7 +8,7 @@
 <%end%>
 
 <p id="notice"><%= notice %></p>
-<h1 class="header">Listing Movies</h1>
+<h1 class="header" style="margin-top:3em; color:white;">Listing Movies</h1>
 <div style="background-color:white;">
 <table>
   <thead>
@@ -40,7 +40,7 @@
         
         <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
         <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
-        <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?'}%>
         <%end%></td> -->
         
       <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
@@ -50,6 +50,5 @@
 </table>
 
 <br>
-
 <%= link_to 'New Movie', new_movie_path %>
 </div>
