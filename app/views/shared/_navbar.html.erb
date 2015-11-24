@@ -1,0 +1,39 @@
+
+  <div class="top_bar">
+      <div id="title"><%=link_to "Flickfindr", root_path, {:id=>"logo"} %></div>
+
+      <%if logged_in? %>
+        <div id="logLoc" style="color: white">Welcome, <%= current_user.name %></div>
+        <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
+      <% else %>
+      <div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
+      <%end%>
+
+      <%= form_tag movies_path, :method => 'get' do %>
+      <div id="searchBar">
+          <%= text_field_tag :search, params[:search], placeholder: "Search", style: "width:500px" %>
+          <%= submit_tag "Search", :name => nil %>
+      </div>
+      <% end %>
+
+
+      <div id="menu" style="margin-top: 4.6em">
+          <ul class="nav navbar-nav navbar-left" style="margin-top: -0.7em;">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Movie Index", movies_path %></li>
+            <li><%= link_to "Message Boards" %></li>
+            <li><%= link_to "About", about_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+            <% end %>
+          </ul>
+      </div>
+  </div> 
+
+
+<!--
+  <%if logged_in? %>
+    <div class="welcome">Welcome, <%= current_user.name %></div>
+    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
+  <% end %>
+-->

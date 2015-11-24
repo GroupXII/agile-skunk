@@ -1,153 +1,74 @@
-<div class="middle">
-	<div class="top_bar">
-  		<div id="title"><%=link_to "flickfindr", root_path, {:id=>"logo"} %></div>
-
-		<%if logged_in? %>
-			<div id="logLoc" style="color: white">Welcome, <%= current_user.name %></div>
-   		    <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
-		<% else %>
-			<div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
-		<%end%>
-
-		<%= form_tag movies_path, :method => 'get' do %>
-			<p id="searchbar">
-				<%= text_field_tag :search, params[:search] %>
-				<%= submit_tag "Search", :name => nil %>
-			</p>
-  	   <% end %>
-		<div class="btn"><%= link_to "Browse Movies", movies_path, {:id => "nav-btn"} %></div>
-		<div class="btn" style="margin-left: 8em"><%= link_to "About", about_path, {:id => "nav-btn"} %></div>
-
-		<%if logged_in? %>
-			<div class="btn" style="margin-left:12em;"><%=link_to "Profile", user_path(current_user), {:id =>"nav-btn"} %></div> 
-		<%end%>		
-	</div>
-
-
-
-	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
-	
-
-	<div class="leftColumn">
-		<h2>Hottest</h2>
-		<div class="hottest">
-			<div class="spacing">
-				<% @movie = Movie.find(1) %>
-				<div class="poster">
-					<%= link_to movie_path(@movie) do%>
-						<img src="<%=@movie.posterPath%>" alt="Movie Poster"/>
-						<span class="text"><%=@movie.title%></span>
+<div class="middle" style="height:120em;">
+	<div style="padding:10px 10px 10px 10px;"> 
+		<div class="leftColumn">
+			<h2>Hottest</h2>
+			<div class="hottest">
+				<div class="spacing" style="left: 1em">
+					<% for i in 1..6 %>
+					<% @movie = Movie.find(i) %>
+					<div class="poster">
+						<%= link_to movie_path(@movie) do%>
+							<img src="<%=@movie.posterPath%>" alt="Movie Poster"/>
+							<span class="text"><%=@movie.title%></span>
+						<%end%>
+					</div>
 					<%end%>
 				</div>
+			</div>
+
+			<% 15.times do %>
+				<br>
+			<% end %>
 			
-				<% @movie = Movie.find(2) %>
-				<div class="poster">
-					<div class="posterSpace">
+			<h2>Upcoming</h2>
+			<div class="postersleft">
+				<div class="spacing" style="top: 0.1em; left: 0.1em">
+				    <% for i in 6..11 %> <!-- only six movies will currently be displayed, the rest will be cutt off until some scrolling function is working for upcoming-->
+					<% @movie = Movie.find(i) %>				
+					<div class="poster" style="margin-top: 5px">
 						<%= link_to movie_path(@movie) do %>
 							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
 							<span class="text"><%= @movie.title %></span>
 						<% end %>
 					</div>
-				</div>
-				<% @movie = Movie.find(3) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>				
-				<% @movie = Movie.find(4) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<% @movie = Movie.find(7) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<% @movie = Movie.find(8) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
+					<% end %>
 				</div>
 			</div>
 		</div>
-		<% 20.times do %>
-			<br>
-		<% end %>
-		<h2>Upcoming</h2>
-		<div class="upcoming">
-			<div class="spacing">
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-				</div>
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<div style="display:block"></div>
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-				<% @movie = Movie.find(1) %>				
-				<div class="poster">
-					<div class="posterSpace">
-						<%= link_to movie_path(@movie) do %>
-							<img src="<%= @movie.posterPath %>" alt="Movie Poster"/>
-							<span class="text"><%= @movie.title %></span>
-						<% end %>
-					</div>
-				</div>
-			</div>	
+		
+		<div class= "rightColumn">
+			<h2>User Ratings</h2>
+			<div class="right">
+				<table>
+					<!--query-->
+					<!--@msg.each do |msg|-->
+					
+					<tr>"This is a fake rating until database gets created." <a> Im a fake link</a></tr>
+					<!--end-->
+				</table>
+			</div>
 		</div>
+		
+		<div class="leftColumn">
+			<h2 style="margin-top: 19em;">Top Rated</h2>
+			<div class="postersleft">
+				<div class="spacing" style="top: 0.1em; right: 0.1em">
+					
+					<% @movie =  Movie.find_by_sql("SELECT * from movies WHERE movies.numVotes > 500").last(6) %>
+						<% @movie.each do |movie| %>
+						<div class="poster" style="margin-top: 5px;">
+							<%= link_to movie_path(movie) do %>
+								<img src="<%= movie.posterPath %>" alt="Movie Poster"/>
+								<span class="text"><%= movie.title %></span>
+							<% end %>
+						</div>
+						<%end%>
+				</div>
+			</div>
+		</div>
+		
+	
+
 
 	<!-- Work in progress
 	<div class="sideInfo">
@@ -158,5 +79,5 @@
 		<% end %>
 		<h2>Recommendations</h2>>
 	</div> -->
-
+	</div>
 </div>

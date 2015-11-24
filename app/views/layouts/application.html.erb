@@ -7,10 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 	<body>
+		<%= render 'shared/navbar' %>
 		<div class ="container">
-			<%flash.each do |message_type, message| %>
-				<div class="login-<%= message_type %>"><%= message %></div>
-			<% end %>
+
 			<%= yield %>
 
 <!-- DEBUGGER WINDOW	
