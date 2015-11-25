@@ -1,9 +1,6 @@
 //will only put movie posters(main area)
 //top rated movies list and coming soon movies stuff (right side)
 //in here
-
-
-
 /*
 .leftColumn {
 	display: table-cell;
@@ -25,24 +22,34 @@
 }
 */
 
-.hottest {
-	background: #A1A1A1;
+.popular {
+	background: black; //#A1A1A1;
 	position: absolute;
-	height: 20em;
-	width: 77.3em;
+	height: 19em;
+	width: 75.4em;
 	border: 1px solid gray;
 	overflow: hidden;
     white-space: nowrap;
 }
 
-.postersleft {
-	background: #A1A1A1;
+.topRated {
+	background: black; //#A1A1A1;
 	position: absolute;
-	height: 38em;
-	width: 38em;
+	height: 19em;
+	width: 75.4em;
 	border: 1px solid gray;
 	overflow: hidden;
-//    white-space: nowrap;
+    white-space: nowrap;
+}
+
+
+.upcoming {
+	background: black; //#A1A1A1;
+	position: absolute;
+	height: 38em;
+	width: 38.2em;
+	border: 1px solid gray;
+	overflow: hidden;
 }
 
 .right{
