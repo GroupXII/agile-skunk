@@ -1,5 +1,49 @@
 <p id="notice"><%= notice %></p>
 
+<!-- Original layout commented out at bottom, testing  new layout 
+     Notes: -Thinking of changing "Show" to another word(s)
+            -Don't see point of showing tmdbID
+            -If everything is shown, not much point in show link? Not sure if problem or not
+            -Trying to add small horizontal line to seperate movies
+-->
+<h1 class="header">Listing Movies</h1>
+<div class="middle" style="margin-top: -7.8em">
+  <table id="movieTable">
+    <thead id="movieHead">
+      <tr>
+        <th>Title</th>
+        <th>Synopsis</th>
+        <th>Status</th>
+        <th>Average Score</th>
+        <th>Votes</th>
+      </tr>
+    </thead>
+
+    <tbody id="movieBody">
+      <% @movies.each do |movie| %>
+        <tr>
+          <td class="moviePoster"><h4><%= movie.title %></h4><img src= "<%= movie.posterPath %>" style="width: 120%; height: 120%"></td>
+          <td><%= movie.synopsis %></td>
+          <td><%= movie.status %></td>
+          <td><%= movie.averageScore %></td>
+          <td><%= movie.numVotes %></td>
+          <td><%= link_to 'Show', movie %></td>
+          
+          <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
+          <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
+          <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end%></td> -->
+          
+        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div> <!-- ./middle >
+
+
+<!-- First layout/UI
 <h1 class="header">Listing Movies</h1>
 <div class="middle" style="margin-top: -7.8em">
   <table>
@@ -33,8 +77,8 @@
           <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
           <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
           <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%></td> -->
-          
+          <%end%></td>--> 
+         <!-- 
         <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
         </tr>
       <% end %>
@@ -43,3 +87,4 @@
   <br>
 </div> <!-- ./middle >
 
+-->

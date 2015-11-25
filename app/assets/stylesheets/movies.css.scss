@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// show.html.erb
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 .movImage {
 	position: absolute;
 	float: left;
@@ -24,12 +26,7 @@
 	float: right;
 }
 
-tr{
- 	border: 2px;
- 	border-color:black;
- }
-
- .middle1 {
+.middle1 {
 	height: 90em;
 	width: 80em;
 	border: 2px solid black;
@@ -38,4 +35,24 @@ tr{
 	margin: auto;
 	position: relative;
 }
- 
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// index.html.erb
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+#movieTable {
+	border-spacing: 35px 20px;
+	border-collapse: separate;
+}
+
+#movieHead *{
+	text-align: center;
+}
+
+#movieBody *{
+	text-align: center;
+}
+
+.moviePoster{
+	text-align: left;
+}
