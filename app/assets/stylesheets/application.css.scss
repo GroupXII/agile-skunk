@@ -95,3 +95,21 @@ a.loginLink {
 	z-index: 0;
 	position: absolute;
 }
+
+.logButton {
+	margin-right: 7em;
+	display: block;
+	height: 40px;
+	width: 150px;
+	background: black;
+	border: 2px solid rgba(33, 68, 72, 0.59);
+	z-index: 1;
+
+	color: white;
+	text-align: center;
+	font: bold 1.2em "sans-serif", Arial, Geneva, Helvetica Neue;
+}
+
+.logButton:hover {
+	text-decoration: none;
+}

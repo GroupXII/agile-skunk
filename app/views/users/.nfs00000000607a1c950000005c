@@ -1,7 +1,6 @@
 <!-- CHANGE LATER -->
 <% provide(:title, 'Sign up') %>
 
-<div class="top_bar"></div>
 <h1 class="header">Sign up</h1>
 
 <div>

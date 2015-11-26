@@ -1,27 +1,29 @@
 
-<div class="middle" style="height: 80em;">
-<% 5.times do %>
-  <br>
-<% end %>
-  <div class="container1">
-      <h1 class="header" style="color: white; margin-left: 6em;">Log in</h1>
-      <div class="form">
-        <%= form_for(:session, url: login_path) do |f| %>
+<div class="middle1">
+  <% 5.times do %>
+    <br>
+  <% end %>
+    <div class="container1">
+        <h1 class="header" style="color: white; margin-left: 6em;">Log in</h1>
+        <div class="form">
+          <%= form_for(:session, url: login_path) do |f| %>
 
-          <%= f.label :email, style: "color:white;"%>
-          <%= f.email_field :email, class:'text_area' %>
+            <%= f.label :email, style: "color:white;"%>
+            <%= f.email_field :email, class:'text_area' %>
 
-          <%= f.label :password, style: "color:white;" %>
-          <%= f.password_field :password,  class:'text_area'%>
-       
+            <%= f.label :password, style: "color:white;" %>
+            <%= f.password_field :password,  class:'text_area'%>
+         
 
-          <%= f.submit "Log in", class: "btn btn-primary" %>
+            <%= f.submit "Log in", class: "btn btn-primary" %>
 
-          <p><strong><em style="color:white">New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></em></strong></p>
-       <% end %>
-       
-       <% flash.each do |message_type, message| %>
-        <div class="login-<%= message_type %>" style="z-index: 1; position: relative; margin: auto; font-size: 1em"><%= message %></div>
-      <% end %>
+            <p><strong><em style="color:white">New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></em></strong></p>
+         <% end %>
+         
+         <% flash.each do |message_type, message| %>
+          <div class="login-<%= message_type %>" style="z-index: 1; position: relative; margin: auto; font-size: 1em"><%= message %></div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+

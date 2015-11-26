@@ -2,19 +2,24 @@
   <div class="top_bar">
       <div id="title"><%=link_to "Flickfindr", root_path, {:id=>"logo"} %></div>
 
-      <%if logged_in? %>
-        <div id="logLoc" style="color: white">Welcome, <%= current_user.name %></div>
-        <div id="logLoc"><%= link_to 'Log out', logout_path,{:class=>"loginLink",method: :delete} %></div>
-      <% else %>
-      <div id ="logLoc"><%= link_to "Login", login_path,{:class=>"loginLink"}%></div>
-      <%end%>
 
       <%= form_tag movies_path, :method => 'get' do %>
-      <div id="searchBar">
+      <div style="float: right; margin-right: 41em;">
+      <div id="searchBar" style="position: absolute;">
           <%= text_field_tag :search, params[:search], placeholder: "Search", style: "width:500px" %>
           <%= submit_tag "Search", :name => nil %>
       </div>
+      </div>
       <% end %>
+
+      <%if logged_in? %>
+     <!--   <div id="logLoc" style="color: white">Welcome, <%= current_user.name %></div> -->
+        <div id="logLoc" style="margin-right: -8em;"><%= link_to 'Logout', logout_path,{:class=>"logButton",method: :delete} %></div>
+      <% else %>
+      <div id ="logLoc"><%= link_to "Login", login_path,{:class=>"logButton"}%></div>
+      <div id="logLoc" style="margin-top: -2em; margin-right: -8em;"><%= link_to "Sign Up", signup_path,{:class=>"logButton"}%></div> 
+      <%end%>
+
 
 
       <div id="menu" style="margin-top: 4.6em">
