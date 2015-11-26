@@ -13,17 +13,18 @@
 .movSpacing {
 	position: relative;
 	margin-top: 10em;
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 .movDescrip {
 	position: relative;
 	top: 3em;
-	left: -3em;
+	left: -1em;
 	font-family: Verdana, sans-serif;
 	font-size: 20px;
 	width: 30em;
 	float: right;
+	color: white;
 }
 
 .middle1 {
@@ -35,6 +36,17 @@
 	margin: auto;
 	position: relative;
 }
+
+.container2 {
+	background: #1B1B1B;
+	height: 67em;
+	width: 75em;
+	margin: auto;
+	border: 1px solid gray;
+	margin: auto;
+}
+
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // index.html.erb
