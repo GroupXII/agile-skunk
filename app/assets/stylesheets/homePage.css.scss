@@ -22,6 +22,15 @@
 }
 */
 
+.comment_box{
+	box-shadow: 0em 0.1em 0.1em 0.1em gray;
+	border-radius:2px;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	display: absolute;
+	overflow: auto;
+
+}
+
 .popular {
 	background: black; //#A1A1A1;
 	position: absolute;

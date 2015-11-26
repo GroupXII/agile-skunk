@@ -22,7 +22,7 @@
     <tbody id="movieBody">
       <% @movies.each do |movie| %>
         <tr>
-          <td class="moviePoster"><h4><%= movie.title %></h4><img src= "<%= movie.posterPath %>" style="width: 120%; height: 120%"></td>
+          <td class="moviePoster"><h4><%= movie.title %></h4><img src= "<%= movie.posterPath %>" style=" height:40%"></td>
           <td><%= movie.synopsis %></td>
           <td><%= movie.status %></td>
           <td><%= movie.averageScore %></td>
