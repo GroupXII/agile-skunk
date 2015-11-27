@@ -53,4 +53,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Forum engine, see https://github.com/rubysherpas/forem for more info
+  gem 'forem', :github => "radar/forem", :branch => "rails4"
+  gem 'will_paginate', '3.0.5'
+  gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+  gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 end

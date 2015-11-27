@@ -42,5 +42,9 @@ class User < ActiveRecord::Base
   	update_attribute(:remember_digest, nil)
   end
 
+  def forem_name
+    name
+  end
+
   
 end
