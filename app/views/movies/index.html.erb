@@ -16,25 +16,30 @@
         <th>Status</th>
         <th>Average Score</th>
         <th>Votes</th>
+        <th style="color:#A1A1A1;"> imma geniusss </th></th>
       </tr>
     </thead>
 
     <tbody id="movieBody">
       <% @movies.each do |movie| %>
         <tr>
+  
           <td class="moviePoster"><h4><%= movie.title %></h4><img src= "<%= movie.posterPath %>" style=" height:40%"></td>
           <td><%= movie.synopsis %></td>
           <td><%= movie.status %></td>
           <td><%= movie.averageScore %></td>
           <td><%= movie.numVotes %></td>
-          <td><%= link_to 'Show', movie %></td>
+          <td class ="tabledata"><%= link_to 'Show', movie, {:class=>"btn btn-primary btn-sm" }%></td>
           
           <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
           <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
           <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%end%></td> -->
           
-        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :put%></td> <%end%>
+        
+          <% if logged_in? %> 
+              <td class ="tabledata"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-primary btn-sm"}%></td>
+          <%end%>
         </tr>
       <% end %>
     </tbody>

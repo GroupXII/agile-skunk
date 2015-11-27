@@ -5,6 +5,17 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // show.html.erb
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+.tabledata{
+	text-align: center;
+	position: relative;
+	margin-bottom: 6em;
+	margin-top: 2em;
+	margin-left: -2em;
+	display:block;
+	
+}
+
 .movImage {
 	position: absolute;
 	float: left;
@@ -63,6 +74,7 @@
 
 #movieBody *{
 	text-align: center;
+
 }
 
 .moviePoster{
