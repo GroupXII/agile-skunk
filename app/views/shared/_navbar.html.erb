@@ -2,8 +2,7 @@
   <div class="top_bar">
       <div id="title"><%=link_to "Flickfindr", root_path, {:id=>"logo"} %></div>
 
-
-      <%= form_tag movies_path, :method => 'get' do %>
+      <%= form_tag main_app.movies_path, :method => 'get' do %>
       <div style="float: right; margin-right: 41em;">
       <div id="searchBar" style="position: absolute;">
           <%= text_field_tag :search, params[:search], placeholder: "Search", style: "width:500px" %>
@@ -14,31 +13,25 @@
 
       <%if logged_in? %>
      <!--   <div id="logLoc" style="color: white">Welcome, <%= current_user.name %></div> -->
-        <div id="logLoc" style="margin-right: -8em;"><%= link_to 'Logout', logout_path,{:class=>"logButton",method: :delete} %></div>
+        <div id="logLoc" style="margin-right: -8em;"><%= link_to 'Logout', main_app.logout_path,{:class=>"logButton",method: :delete} %></div>
       <% else %>
-      <div id ="logLoc"><%= link_to "Login", login_path,{:class=>"logButton"}%></div>
-      <div id="logLoc" style="margin-top: -2em; margin-right: -8em;"><%= link_to "Sign Up", signup_path,{:class=>"logButton"}%></div> 
+      <div id ="logLoc"><%= link_to "Login", main_app.login_path,{:class=>"logButton"}%></div>
+      <div id="logLoc" style="margin-top: -2em; margin-right: -8em;"><%= link_to "Sign Up", main_app.signup_path,{:class=>"logButton"}%></div> 
       <%end%>
 
 
 
       <div id="menu" style="margin-top: 4.6em">
           <ul class="nav navbar-nav navbar-left" style="margin-top: -0.7em;">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Movie Index", movies_path %></li>
-            <li><%= link_to "Message Boards" %></li>
-            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Home", main_app.root_path %></li>
+            <li><%= link_to "Movie Index", main_app.movies_path %></li>
+            <li><%= link_to "Message Boards", forem.forums_path %></li>
+            <li><%= link_to "About", main_app.about_path %></li>
             <% if logged_in? %>
-              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Profile", main_app.user_path(current_user) %></li>
             <% end %>
           </ul>
       </div>
   </div> 
 
 
-<!--
-  <%if logged_in? %>
-    <div class="welcome">Welcome, <%= current_user.name %></div>
-    <div class="logout"><%= link_to 'Log out', logout_path, method: :delete%></div>
-  <% end %>
--->
