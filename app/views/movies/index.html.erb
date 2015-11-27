@@ -34,7 +34,7 @@
           <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%end%></td> -->
           
-        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
+        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :put%></td> <%end%>
         </tr>
       <% end %>
     </tbody>

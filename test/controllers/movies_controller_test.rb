@@ -46,4 +46,15 @@ class MoviesControllerTest < ActionController::TestCase
 
     assert_redirected_to movies_path
   end
+  
+  
+  
+  test "should favorite" do
+    @user = user(:test)
+    @movie = movie(:testmovie)
+    @user.favorites << @movie
+    
+    assert_equal(1, @user.favorites.count, message=nil ) 
+    
+  end
 end

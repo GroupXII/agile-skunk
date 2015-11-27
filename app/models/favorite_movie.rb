@@ -1,7 +1,6 @@
 class FavoriteMovie < ActiveRecord::Base
-    belongs_to :user
-    belongs_to :movie
-    
-    validates :user_id, presence: true
-    validates :movie_id, presence: true
+  belongs_to :movie
+  belongs_to :user
+  
+  validates :user_id,  uniqueness:  {scope: :movie_id, message: "already favorited" }
 end

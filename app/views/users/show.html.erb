@@ -22,9 +22,23 @@
 			<h2 >Favorites</h2>
 		    <ul>
 		   
-		    	<li><%= @fav = current_user.favorite_movies.find(1)%></li>
-		    	<%= @fav.user_id %>
-		    	<%= @fav.movie_id %>
+
+		    <% current_user.favorites.count %>
+    		<% if current_user.favorites.any? %>
+    		<div style="border: 0.1em solid gray; padding: 0.4em 0.4em 0.4em 0.4em; position:relative; display: inline-block;">
+    			<% current_user.favorites.each do |fav| %>
+    			  <div class="poster" style="margin-top: 5px;">
+    			    <img src="<%= fav["posterPath"] %>" alt="Movie Poster"/>
+    			    <%= link_to "unfavorite", favorite_movie_path(fav, type: "delete"), method: :put %>
+    			    </div>
+    			<%end%>
+    		</div>
+   			<%end%>
+		    
+		    
+	
+		    	
+	
 		    
 		    	
 
