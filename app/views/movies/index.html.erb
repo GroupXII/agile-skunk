@@ -9,41 +9,38 @@
 <h1 class="header">Listing Movies</h1>
 <div class="middle" style="margin-top: -7.8em">
   <table id="movieTable">
-    <thead id="movieHead">
-      <tr>
-        <th>Title</th>
-        <th>Synopsis</th>
-        <th>Status</th>
-        <th>Average Score</th>
-        <th>Votes</th>
-        <th style= "padding-right: 0.5em"></th>
-      </tr>
-    </thead>
 
+    <thead>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
     <tbody id="movieBody">
       <% @movies.each do |movie| %>
         <tr>
   
-          <td class="moviePoster"><h4><%= movie.title %></h4><img src= "<%= movie.posterPath %>" style=" height:40%"></td>
-          <td><%= movie.synopsis %></td>
-          <td><%= movie.status %></td>
-          <td><%= movie.averageScore %></td>
-          <td><%= movie.numVotes %></td>
-          <td class ="tabledata" style= "margin-right: 3em"><%= link_to 'Show', movie, {:class=>"btn btn-primary btn-sm" }%></td>
-            
-                <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
-                <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
-                <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%end%></td> -->
-          
-        
-          <% if logged_in? %> 
-            <% if current_user.favorites.where(:id => movie.id).blank? %>
-              <td class ="tabledata" style= "margin-right: 3em"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></td>
-            <%else%>
-              <td class ="tabledata" style= "margin-right: 3em"><%= link_to "unfavorite", favorite_movie_path(movie, type: "delete"), {method: :put, :class => "btn btn-danger btn-sm"} %></td>
+          <td class="moviePoster" style= "margin-left: -3em">
+            <h4><strong><%= movie.title %></strong></h4>
+            <!-- Let user's click on poster to show more info -->
+            <%= link_to(movie) do %>
+              <img src= "<%= movie.posterPath %>" style="height: 30%;">
+            <% end %>
+          </td>
+          <td>
+            <%= movie.synopsis %> <%= link_to "...show more", movie %><br><br>
+            <strong><%= movie.status %></strong> <br>
+            <strong>Average Score: <%= movie.averageScore %></strong><br>
+          </td>
+          <td>
+            <% if logged_in? %> 
+              <% if current_user.favorites.where(:id => movie.id).blank? %>
+                <td class ="tabledata" style= "margin-right: 3.7em"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></td>
+              <%else%>
+                <td class ="tabledata" style= "margin-right: 4.7em"><%= link_to "unfavorite", favorite_movie_path(movie, type: "delete"), {method: :put, :class => "btn btn-danger btn-sm"} %></td>
+              <%end%>
             <%end%>
-          <%end%>
+          </td>
+          
         </tr>
       <% end %>
     </tbody>

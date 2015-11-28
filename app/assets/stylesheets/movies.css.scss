@@ -68,15 +68,19 @@
 	border-collapse: separate;
 }
 
-#movieHead *{
+#movieBody tr{
 	text-align: center;
-}
-
-#movieBody *{
-	text-align: center;
-
+	outline-style: solid;
+	outline-width: 1px;
+	outline-offset: 12px;
 }
 
 .moviePoster{
 	text-align: left;
+}
+
+.moviePoster img{
+	height: 120%;
+	width: 120%;
+	margin-bottom: 20px;
 }
