@@ -15,10 +15,22 @@
     </div>
   
     <div class="movDescrip">
+      <p style="float:center; margin: -6em 0em 6em -0.3em; position:relative;">
+        <% if logged_in? %> 
+          <% if current_user.favorites.where(:id => @movie.id).blank? %>
+            <%= link_to 'Favorite', favorite_movie_path(@movie, type: "favorite"), {method: :put, :class=>"btn btn-success"}%>
+          <%else%>
+            <%= link_to "unfavorite", favorite_movie_path(@movie, type: "delete"), {method: :put, :class => "btn btn-danger"} %>
+          <%end%>
+        <%end%>
+      </p>
+      
+      
       <p>
         <strong>Title:</strong>
         <%= @movie.title %>
       </p>
+      
 
       <p>
         <strong>Synopsis:</strong>

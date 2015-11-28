@@ -44,6 +44,7 @@
 
 .middle{
 	width: 80em;
+	height: auto;
 	border-bottom: 3px solid black;
  	border-right: 3px solid black;
  	border-left: 3px solid black;
@@ -51,6 +52,7 @@
 	background-color: #A1A1A1;
 	margin: auto;
 	position: relative;
+
 }
 
 #logLoc{/*location of login button*/
@@ -86,6 +88,7 @@ a.loginLink {
 	background-color: #363636;
  	width:80em;
  	margin-bottom: 10em;
+ 	margin-top: 3em;
 }
 
 #menu {

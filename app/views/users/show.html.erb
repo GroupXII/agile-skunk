@@ -1,9 +1,9 @@
 <!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
 
-<div class="middle">
+<div class="middle" style="display: inline-block">
 	<h1 class="header" style="margin-left:1em;"> PROFILE </h1>
 		<div class="profile_left">
-			<div style="display:inline-block; max-height:60%;">
+			<div style="display:inline-block; height:30%;">
 			<img id="pic" src= "http://i936.photobucket.com/albums/ad204/carmenmbonilla/wildlife%20-%20%20natures%20landscape/zzanimalsjdkkjkds_zps3d92f116-1.jpg"/>
 			</div>
 			<p>
@@ -22,17 +22,17 @@
 			<h2 >Favorites</h2>
 		    <ul>
 		   
-		    <% current_user.favorites.count %>
     		<% if current_user.favorites.any? %>
-    		<div style="border: 0.1em solid gray; padding: 0.4em 0.4em 0.4em 0.4em; position:relative; display: inline-block; margin-bottom: 1em;">
+    		<div class="fav">
     			<% current_user.favorites.each do |fav| %>
-    			  <div class="poster" style="margin-top: 5px;">
+    			  <div class="poster" style="margin-top: 1em;">
     			    <img src="<%= fav["posterPath"] %>" alt="Movie Poster"/>
-    			    <div style= "margin-top: -4em; overflow:auto; padding: 0.4em 0.4em 0.4em 0.4em;"><%= link_to "unfavorite", favorite_movie_path(fav, type: "delete"), {method: :put, :class => "btn btn-primary"} %></div>
     			  </div>
     			<%end%>
     		</div>
+    		<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary" %></div>
    			<%end%>
+   			
 		    
 		    </ul>
 		  </div>

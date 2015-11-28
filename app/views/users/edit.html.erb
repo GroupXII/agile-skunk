@@ -1,5 +1,5 @@
 <div class ="middle">
-  <div style="padding: 1em 1em 1em 1em;">
+  <div style="padding: 1em 1em 1em 1em; margin-bottom: 5em;">
     <h1>Editing User</h1>
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
@@ -37,6 +37,22 @@
       </div>
     <% end %>
   
+  <div stlye="padding:1em 1em 1em 1em;">
+   <table>
+     <thead>
+       <th>Movie</th>
+       <th style="color:#A1A1A1;">Link</th>
+     </thead>
+     <tbody>
+       <% current_user.favorites.each do |fav| %>
+         <tr>
+           <td> <%= fav["title"] %></td>
+           <td style="margin-left:0.9em;"><%= link_to "unfavorite", favorite_movie_path(fav, type: "delete"), {method: :put} %></td>
+         </tr>
+       <%end%>
+      <tbody>
+    </table>
+    </div>
    
     <div class="btn"><%= link_to 'Back', user_path(current_user), :id => "nav-btn" %></div>
   </div>

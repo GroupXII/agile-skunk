@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* forms */
+.fav{
+	
+	border-radius: 2px; 
+	border: 0.2em solid gray; 
+	padding: 0.6em 0.6em 0.6em 0.6em; 
+	position:relative; 
+	display: inline-block; 
+	margin-bottom: 1em;
+}
+
 .logout{
 	postion: relative;
 	color:white;
