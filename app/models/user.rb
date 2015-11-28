@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
   	update_attribute(:remember_digest, nil)
   end
 
+  # Displays user name in forum posts
   def forem_name
     name
   end
