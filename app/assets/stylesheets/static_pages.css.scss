@@ -32,3 +32,35 @@
 	margin: 1em;
 }
 
+#box1{
+	position: relative;
+	left: 18%;
+	border: 3px solid;
+	background-color: white;
+	padding: 25px;
+	width: 700px;
+	height: 1000px;
+}
+
+table, th, td{
+	border: 1px solid black;
+}
+
+table{
+	width: 100%;
+}
+
+.pic1{
+	height: 150px;
+	width: 150px;
+}
+
+.name1{
+	float: right;
+}
+
+.imagewrap{
+	float: left;
+	height: 150px;
+	width: 150px;
+}
