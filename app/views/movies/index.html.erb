@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="header">Listing Movies</h1>
-<div class="middle" style="margin-top: -7.8em">
+<h1 class="header" style="margin-left: 1em;">Listing Movies:</h1>
+<% 7.times do %>
+  <br>
+<% end %>
+<div style="margin-top: -7.8em">
   <% @movies.each do |movie| %>
     <div class="item poster card" style="margin-top: 2em; margin-left: 2em;">
       <div class="image_content">
