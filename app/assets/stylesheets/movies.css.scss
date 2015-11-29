@@ -84,3 +84,93 @@
 	width: 120%;
 	margin-bottom: 20px;
 }
+
+.item.card:nth-child(odd) {
+	clear: left;
+}
+
+.item.poster.card {
+	margin-bottom: 34px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+	transition: all 0.3s ease-out;
+}
+
+.item.card {
+	width: 483px;
+}
+
+.item.poster.card .image_content {
+	float: left;
+	width: 185px;
+	margin-right: 13px;
+}
+
+.image_content {
+	height: 278px;
+
+}
+
+.image_content {
+	overflow: hidden;
+}
+
+.item.poster.card .info {
+	float: left;
+	width: 274px;
+	height: 275px;
+	position: relative;
+}
+
+.item.poster.card p a.title {
+	max-width: 210px;
+}
+
+.item.card.poster p>a.title {
+	line-height: 24px;
+}
+
+.item p
+a.title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	float: left;
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+	font-weight: normal;
+	background: transparent;
+}
+
+.item.card .overview {
+	word-wrap: break-word;
+	white-space: normal;
+	color: black;
+	line-height: 24px;
+}
+
+.overview {
+	overflow: hidden;
+	width: 250px;
+	word-wrap: break-word; 
+	text-overflow: ellipsis;
+}
+
+p {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+.item p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 4px 4px 0 4px;
+}

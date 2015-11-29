@@ -2,38 +2,28 @@
 
 <h1 class="header">Listing Movies</h1>
 <div class="middle" style="margin-top: -7.8em">
-  <table id="movieTable">
-
-    <thead>
-    </thead>
-    
-    <tbody id="movieBody">
-      <% @movies.each do |movie| %>
-        <tr>
-          <td class="moviePoster" style= "margin-left: -3em">
-            <h4><strong><%= movie.title %></strong></h4>
-            <!-- Let user's click on poster to show more info -->
-            <%= link_to(movie) do %>
-              <img src= "<%= movie.posterPath %>">
-            <% end %>
-          </td>
-          <td>
-            <%= movie.synopsis %> <%= link_to "...show more", movie %><br><br>
-            <strong><%= movie.status %></strong> <br>
-            <strong>Average Score: <%= movie.averageScore %></strong><br>
-          </td>
-          <td>
-            <% if logged_in? %> 
-              <% if current_user.favorites.where(:id => movie.id).blank? %>
-                <td class ="tabledata" style= "margin-right: 3.7em"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></td>
-              <%else%>
-                <td class ="tabledata" style= "margin-right: 4.7em"><%= link_to "unfavorite", favorite_movie_path(movie, type: "delete"), {method: :put, :class => "btn btn-danger btn-sm"} %></td>
-              <%end%>
-            <%end%>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-</div>
+  <% @movies.each do |movie| %>
+    <div class="item poster card" style="margin-top: 2em; margin-left: 2em;">
+      <div class="image_content">
+        <%= link_to movie_path(movie) do%>
+          <img class="poster" style="height: 278px;" srcset= "<%= movie.posterPath %>" alt="<%= movie.title %>"> 
+        <% end %> <!-- end for link_to movie_path -->
+      </div>
+      <div class="info" style="text-overflow: ellipsis; overflow: hidden; height: 160px;">
+        <p class="title">
+         <strong><%= movie.title %></strong>
+        </p>
+        <p class="overview">
+          <%= movie.synopsis %>
+        </p>
+      </div><%= link_to "more details", movie %>
+      <% if logged_in? %> 
+        <% if current_user.favorites.where(:id => movie.id).blank? %>
+          <div style="position: absolute; margin-left: 29em;"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></div>
+       <%else%>
+          <div style="position: absolute; margin-left: 28.3em;"><%= link_to "unfavorite", favorite_movie_path(movie, type: "delete"), {method: :put, :class => "btn btn-danger btn-sm"} %></div>
+        <% end %> <!-- end for nested if statement -->
+    <% end %> <!-- end if statement -->
+    </div> 
+  <%end%> <!-- end loop @movies.each do |movie| -->
+</div> <!-- ./middle -->
