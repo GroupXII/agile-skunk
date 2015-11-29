@@ -1,19 +1,72 @@
-	<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
+<div style="padding:10px 10px 10px 10px;"> <!-- I'm guessing this is going to be the navigation bar? -->
 	<br>
 	
-	<div class="leftColumn">
-	  <p>Coming soon!</p>
+	<div id="box1">
+	  <p>
+	  	Flickfindr is a movie database running Ruby on Rails designed to help 
+	  	people find personalized recommendations for movies to watch. Users can
+	  	rate, favourite and review movies in our database.
+	  <p>
+	  	The current development team consists of: 
+	  	<table id="admin">
+	  		<tr>
+	  			<th></th>
+	  			<th>Description</th>
+	  		</tr>
+	  		<tr>
+	  			<td>
+	  				<div class="imagewrap">
+	  					<%= image_tag("canada.jpg", alt: "profilepic", class: "pic1") %>
+	  				</div>
+	  				<div class="name1">
+	  					<%= link_to "Insert_Username", users_path(@user) %></td>
+	  				</div>
+	  			<td>Hi!</td>
+	  		</tr>
+	  		<tr>
+	  			<td>
+	  				<div class="imagewrap">
+	  					<%= image_tag("mountain.jpg", alt: "profilepic", class: "pic1") %>
+	  				</div>
+	  				<div class="name1">
+	  					<%= link_to "Insert_Username", users_path(@user) %></td>
+	  				</div>
+	  			<td>table column</td>
+	  		</tr>
+	  		<tr>
+	  			<td>
+	  				<div class="imagewrap">
+	  					<%= image_tag("kotori.jpg", alt: "profilepic", class: "pic1") %>
+	  				</div>
+	  				<div class="name1">
+	  					<%= link_to "Insert_Username", users_path(@user) %></td>
+	  				</div>
+	  			<td>table column</td>
+	  		</tr>
+	  		<tr>
+	  			<td><%= link_to "Admin", users_path(@user) %></td>
+	  			<td>table column</td>
+	  		</tr>
+	  		<tr>
+	  			<td>
+	  				<div class="imagewrap">
+	  					<%= image_tag("sun.png", alt: "profilepic", class: "pic1") %>
+	  				</div>
+	  				<div class="name1">
+	  					<%= link_to "Insert_Username", users_path(@user) %></td>
+	  				</div>
+	  			<td>table column</td>
+	  		</tr>
+	  	</table>
+	  	
+	  </p>
+	  
+	  
+
+
+	</p>
 	</div>
 
-	<!-- Work in progress
-	<div class="sideInfo">
-		<h2>Recently Viewed</h2> &nbsp adds a single space
 
-		<% 20.times do %>
-			<br>
-		<% end %>
-		<h2>Recommendations</h2>>
-	</div> -->
 </div>
-<div id="bottom">
-	
+
