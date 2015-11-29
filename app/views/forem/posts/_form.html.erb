@@ -1,4 +1,8 @@
-<%= f.input :text, :input_html => { :class => "field col-md-12" } %>
+
+<!-- this is for the text field when making a new topic or post -->
+<div style="margin-left: 5.5em; margin-top: 20em;position:absolute;">
+	<%= f.input :text, :input_html => { :style => "width: 500px; background-color: black; color: white;" } %>
+</div>
 
 <% if params[:reply_to_id] %>
   <%= f.hidden_field :reply_to_id, :value => params[:reply_to_id] %>
