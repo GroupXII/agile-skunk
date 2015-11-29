@@ -3,6 +3,7 @@ class Movie < ActiveRecord::Base
   has_many :favorited_by, through: :favorite_movies, source: :user
   
   validates :tmdbID, uniqueness: true, presence: true
+  serialize :genres
 
   def self.search(search)
     if search.present?

@@ -1,52 +1,54 @@
-<div class ="middle">
   <div style="padding: 1em 1em 1em 1em; margin-bottom: 5em;">
+    <div style ="float:left;">
     <h1>Editing User</h1>
-    <%= form_for(@user) do |f| %>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      
+            <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
     
-          <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+     
+      
+        <div class="field">
+          <%= f.label :password %><br>
+          <%= f.text_field :password %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation %><br>
+          <%= f.text_field :password_confirmation %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
         </div>
       <% end %>
+    </div>
   
-      <div class="field">
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-      </div>
-   
-    
-      <div class="field">
-        <%= f.label :password %><br>
-        <%= f.text_field :password %>
-      </div>
-      <div class="field">
-        <%= f.label :password_confirmation %><br>
-        <%= f.text_field :password_confirmation %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  
-  <div stlye="padding:1em 1em 1em 1em;">
+  <div class="rightColumn" style="margin:1em 0em 5em 39em; float:center border:2px soild gray">
+  <h2>Manage Favorites</h2>
    <table>
      <thead>
        <th>Movie</th>
-       <th style="color:#A1A1A1;">Link</th>
+       <th style= "padding-right: 0.5em"></th>
      </thead>
      <tbody>
        <% current_user.favorites.each do |fav| %>
          <tr>
-           <td> <%= fav["title"] %></td>
+           <td style= "padding-right: 0.5em"> <%= fav["title"] %></td>
            <td style="margin-left:0.9em;"><%= link_to "unfavorite", favorite_movie_path(fav, type: "delete"), {method: :put} %></td>
          </tr>
        <%end%>
@@ -54,6 +56,5 @@
     </table>
     </div>
    
-    <div class="btn"><%= link_to 'Back', user_path(current_user), :id => "nav-btn" %></div>
+    <div class ="rightColumn" style="float bottom"><div class="btn"><%= link_to 'Back', user_path(current_user), :id => "nav-btn" %></div></div>
   </div>
-</div>

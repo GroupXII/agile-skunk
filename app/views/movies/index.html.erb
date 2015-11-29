@@ -1,103 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<!-- Original layout commented out at bottom, testing  new layout 
-     Notes: -Thinking of changing "Show" to another word(s)
-            -Don't see point of showing tmdbID
-            -If everything is shown, not much point in show link? Not sure if problem or not
-            -Trying to add small horizontal line to seperate movies
--->
-<h1 class="header">Listing Movies</h1>
-<div class="middle" style="margin-top: -7.8em">
-  <table id="movieTable">
-    <thead id="movieHead">
-    </thead>
-
-    <tbody id="movieBody">
-      <% @movies.each do |movie| %>
-        <tr>
-  
-          <td class="moviePoster">
-            <h4><%= movie.title %></h4>
-            <!-- Let user's click on poster to show more info -->
-            <%= link_to(movie) do %>
-              <img src= "<%= movie.posterPath %>">
-            <% end %>
-          </td>
-          <td>
-            <%= movie.synopsis %> <%= link_to "...show more", movie %><br><br>
-            <strong><%= movie.status %></strong> <br>
-            <strong>Average Score: <%= movie.averageScore %></strong><br>
-            <% if logged_in? %> <%= link_to 'Add to favorites', favorite_movie_path(movie, type: "favorite"), method: :put%> <%end%>
-          </td>
-          
-          <!--
-            -CSS positioning problems with favorites button, leaving for another commit
-            -Thinking of moving show to be button as well if we can't hide synopsis for a "...show more" link
-          -->
-          <!--<td class ="tabledata"><%= link_to 'Show', movie, {:class=>"btn btn-primary btn-sm" }%></td>-->
-            
-                <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
-                <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
-                <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%end%></td> -->
-          <!--
-          <% if logged_in? %> 
-            <% if current_user.favorites.where(:id => movie.id).blank? %>
-              <td class ="tabledata"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-primary btn-sm"}%></td>
-            <%end%>
-          <%end%>
-          -->
-          
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<h1 class="header" style="margin-left: 1em;">Listing Movies:</h1>
+<% 7.times do %>
   <br>
-</div> <!-- ./middle >
-
-
-<!-- First layout/UI
-<h1 class="header">Listing Movies</h1>
-<div class="middle" style="margin-top: -7.8em">
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Tmdbid</th>
-        <th>Synopsis</th>
-        <th>Posterpath</th>
-        <th>Releasedate</th>
-        <th>Status</th>
-        <th>Averagescore</th>
-        <th>Numvotes</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td><%= movie.title %></td>
-          <td><%= movie.tmdbID %></td>
-          <td><%= movie.synopsis %></td>
-          <td><img src= "<%= movie.posterPath %>" style="width: 80%; height: 10%"></td>
-          <td><%= movie.releaseDate %></td>
-          <td><%= movie.status %></td>
-          <td><%= movie.averageScore %></td>
-          <td><%= movie.numVotes %></td>
-          <td><%= link_to 'Show', movie %></td>
-          
-          <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
-          <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
-          <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%></td>--> 
-         <!-- 
-        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-</div> <!-- ./middle >
-
--->
+<% end %>
+<div style="margin-top: -7.8em">
+  <% @movies.each do |movie| %>
+    <div class="item poster card" style="margin-top: 2em; margin-left: 2em;">
+      <div class="image_content">
+        <%= link_to movie_path(movie) do%>
+          <img class="poster" style="height: 278px;" srcset= "<%= movie.posterPath %>" alt="<%= movie.title %>"> 
+        <% end %> <!-- end for link_to movie_path -->
+      </div>
+      <div class="info" style="text-overflow: ellipsis; overflow: hidden; height: 160px;">
+        <p class="title">
+         <strong><%= movie.title %></strong>
+        </p>
+        <p class="overview">
+          <%= movie.synopsis %>
+        </p>
+      </div><%= link_to "more details", movie %>
+      <% if logged_in? %> 
+        <% if current_user.favorites.where(:id => movie.id).blank? %>
+          <div style="position: absolute; margin-left: 29em;"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></div>
+       <%else%>
+          <div style="position: absolute; margin-left: 28.3em;"><%= link_to "unfavorite", favorite_movie_path(movie, type: "delete"), {method: :put, :class => "btn btn-danger btn-sm"} %></div>
+        <% end %> <!-- end for nested if statement -->
+    <% end %> <!-- end if statement -->
+    </div> 
+  <%end%> <!-- end loop @movies.each do |movie| -->
+</div> <!-- ./middle -->
