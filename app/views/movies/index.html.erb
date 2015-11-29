@@ -1,29 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<!-- Original layout commented out at bottom, testing  new layout 
-     Notes: -Thinking of changing "Show" to another word(s)
-            -Don't see point of showing tmdbID
-            -If everything is shown, not much point in show link? Not sure if problem or not
-            -Trying to add small horizontal line to seperate movies
--->
 <h1 class="header">Listing Movies</h1>
 <div class="middle" style="margin-top: -7.8em">
   <table id="movieTable">
 
     <thead>
-      <th></th>
-      <th></th>
-      <th></th>
     </thead>
+    
     <tbody id="movieBody">
       <% @movies.each do |movie| %>
         <tr>
-  
           <td class="moviePoster" style= "margin-left: -3em">
             <h4><strong><%= movie.title %></strong></h4>
             <!-- Let user's click on poster to show more info -->
             <%= link_to(movie) do %>
-              <img src= "<%= movie.posterPath %>" style="height: 30%;">
+              <img src= "<%= movie.posterPath %>">
             <% end %>
           </td>
           <td>
@@ -40,57 +31,9 @@
               <%end%>
             <%end%>
           </td>
-          
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
-</div> <!-- ./middle >
-
-
-<!-- First layout/UI
-<h1 class="header">Listing Movies</h1>
-<div class="middle" style="margin-top: -7.8em">
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Tmdbid</th>
-        <th>Synopsis</th>
-        <th>Posterpath</th>
-        <th>Releasedate</th>
-        <th>Status</th>
-        <th>Averagescore</th>
-        <th>Numvotes</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td><%= movie.title %></td>
-          <td><%= movie.tmdbID %></td>
-          <td><%= movie.synopsis %></td>
-          <td><img src= "<%= movie.posterPath %>" style="width: 80%; height: 10%"></td>
-          <td><%= movie.releaseDate %></td>
-          <td><%= movie.status %></td>
-          <td><%= movie.averageScore %></td>
-          <td><%= movie.numVotes %></td>
-          <td><%= link_to 'Show', movie %></td>
-          
-          <!--<td><%if false%> just commenting out so users can't do this ~~~~~~~~~
-          <%= link_to 'Edit', edit_movie_path(movie) %></td>-->
-          <!--<td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%></td>--> 
-         <!-- 
-        <% if logged_in? %> <td><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), method: :post%></td> <%end%>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-</div> <!-- ./middle >
-
--->
+</div>
