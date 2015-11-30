@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   mount Forem::Engine, :at => '/forums'
 
 
-  root'static_pages#home'
+  root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
   get 'search' => 'movies#index'
