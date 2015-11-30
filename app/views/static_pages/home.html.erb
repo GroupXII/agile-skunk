@@ -4,7 +4,10 @@
 			<h2>Popular</h2>
 			<div class="popular">
 				<div class="spacing" style="top: 0.1em; left: 0.5em;">
-					<% @movie = Movie.find_by_sql("SELECT * FROM movies WHERE movies.status = 'Popular' AND movies.releaseDate BETWEEN '2015-01-01' AND '2015-11-20' ORDER BY releaseDate DESC").first(6) %>
+					<!-- Commented out for ruby equivalent
+						<% @movie = Movie.find_by_sql("SELECT * FROM movies WHERE movies.status = 'Popular' AND movies.releaseDate BETWEEN '2015-01-01' AND '2015-11-20' ORDER BY releaseDate DESC").first(6) %>
+					-->
+					<% @movie = Movie.where("status = 'Popular'").order("releaseDate BETWEEN '2015-01-01' AND '2015-11-20' DESC").first(6) %>
 					<% @movie.each do |movie| %>
 					<div class="poster" style="margin-top: 5px;">
 						<%= link_to movie_path(movie) do%>
@@ -23,7 +26,10 @@
 			<h2>Upcoming</h2>
 			<div class="upcoming">
 				<div class="spacing" style="top: 0.4em; left: 0.5em">
-					<% @movie = Movie.find_by_sql("SELECT * FROM movies WHERE movies.status = 'Upcoming' AND movies.title != 'A Hologram for the King' AND movies.releaseDate > 2015-11-24 ORDER BY movies.releaseDate ASC").first(6) %>
+					<!-- Commented out for ruby equivalent
+						<% @movie = Movie.find_by_sql("SELECT * FROM movies WHERE movies.status = 'Upcoming' AND movies.title != 'A Hologram for the King' AND movies.releaseDate > 2015-11-24 ORDER BY movies.releaseDate ASC").first(6) %> 
+					-->
+					<% @movie =  Movie.where("status = 'Upcoming'").order("releaseDate ASC").first(6) %>
 					<% @movie.each do |movie| %>
 					<div class="poster" style="margin-top: 5px;">
 						<%= link_to movie_path(movie) do%>
@@ -53,8 +59,11 @@
 			<h2 style="margin-top: 19em;">Top Rated</h2>
 			<div class="postersleft">
 				<div class="topRated">
-					<div class="spacing" style="top: 0.1em; left: 0.5em;">			
-						<% @movie =  Movie.find_by_sql("SELECT * FROM movies WHERE movies.numVotes > 500 ORDER BY averageScore DESC").first(6) %>
+					<div class="spacing" style="top: 0.1em; left: 0.5em;">
+						<!-- Commented out for ruby equivalent	
+							<% @movie =  Movie.find_by_sql("SELECT * FROM movies WHERE movies.numVotes > 500 ORDER BY averageScore DESC").first(6) %>
+						-->
+						<% @movie =  Movie.where("numVotes > 500").order("averageScore DESC").first(6) %>
 							<% @movie.each do |movie| %>
 							<div class="poster" style="margin-top: 5px;">
 								<%= link_to movie_path(movie) do %>
