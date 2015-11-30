@@ -22,13 +22,13 @@
 
     <div id="menu" style="margin-top: 4.6em">
         <ul class="nav navbar-nav navbar-left" style="margin-top: -0.7em;">
-          <li><%= link_to "Home", main_app.root_path %></li>
-          <li><%= link_to "Movie Index", main_app.movies_path %></li>
-          <li><%= link_to "Message Boards", forem.forums_path %></li>
-          <li><%= link_to "About", main_app.about_path %></li>
+          <!--<li><%= link_to "Home", main_app.root_path %></li>-->
           <% if logged_in? %>
             <li><%= link_to "Profile", main_app.user_path(current_user) %></li>
           <% end %>
+          <li><%= link_to "Movie Index", main_app.movies_path %></li>
+          <li><%= link_to "Message Boards", forem.forums_path %></li>
+          <li><%= link_to "About", main_app.about_path %></li>
         </ul>
     </div>
 </div> 

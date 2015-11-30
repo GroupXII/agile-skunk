@@ -1,6 +1,12 @@
-<h1 style="width:100% margin:auto text-align:center;">PROFILE</h1>
-<div class= "btn" style="margin-left:0em;"><%= link_to 'Edit', edit_user_path(@user) , :id => "nav-btn"%></div> 
-<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> 
+<table>
+	<tr>
+		<td><h1>PROFILE</h1></td>
+		<td style="text-align: right"><%= link_to 'Edit Profile', edit_user_path(@user) , class: "btn-primary"%></td>
+	</tr>
+</table>
+
+
+<!--<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> -->
 	<div class="profile_left">
 		<!--<div style="display:inline-block; height:30em; width: 30em;">-->
 		<table>
@@ -37,7 +43,7 @@
   			  </div>
   			<%end%>
   		</div>
-  		<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary" %></div>
+  		<!--<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary" %></div>-->
  			<%end%>
  			
 	    
