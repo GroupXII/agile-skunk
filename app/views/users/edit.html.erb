@@ -1,4 +1,4 @@
-  <div style="padding: 1em 1em 1em 1em; margin-bottom: 5em;">
+  <div style="padding: 1em 1em 1em 1em; margin-bottom: 15em;">
     <div style ="float:left;">
     <h1>Editing User</h1>
       <%= form_for(@user) do |f| %>
@@ -25,12 +25,12 @@
      
       
         <div class="field">
-          <%= f.label :password %><br>
-          <%= f.text_field :password %>
+          <%= f.label :new_password %><br>
+          <%= f.password_field :password %>
         </div>
         <div class="field">
           <%= f.label :password_confirmation %><br>
-          <%= f.text_field :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
         </div>
         <div class="actions">
           <%= f.submit %>
