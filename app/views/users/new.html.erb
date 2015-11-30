@@ -3,46 +3,49 @@
 
 <% provide(:title, 'Sign up') %>
 
+<% 5.times do%>
+  <br>
+<% end %>
+<div class="container1">
+  <%if logged_in? %>
+    <p>You are not a new user! </p>
+  <%else%>
 
-<%if logged_in? %>
-  <p>You are not a new user! </p>
-<%else%>
+    <h1 class="header" style="color: white; margin-left: 5em;">Register</h1>
+    <div class="form">
+      <%= form_for(@user) do |f| %>
 
-  <h1 class="header" style="margin-left: 5em;">Register</h1>
-  <div class="form">
-    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %> prohibited this user from being created:
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+        <%= f.label :Username, style: "color:white;" %>
+        <%= f.text_field :name, class: 'text_area' %>
 
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@user.errors.count, "error") %> prohibited this user from being created:
-        </h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    
-      <%= f.label :Username %>
-      <%= f.text_field :name, class: 'text_area' %>
+        <%= f.label :email, style: "color:white;"%>
+        <%= f.email_field :email, class: 'text_area' %>
 
-      <%= f.label :email%>
-      <%= f.email_field :email, class: 'text_area' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'text_area' %>
-
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'text_area'%>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-<%end%>
+        <%= f.label :password, style: "color:white;" %>
+        <%= f.password_field :password, class: 'text_area' %>
 
 
- 
-   
+        <%= f.label :password_confirmation, style: "color:white;" %>
+        <%= f.password_field :password_confirmation, class: 'text_area'%>
+
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <%end%>
+</div>
+<% 5.times do %>
+  <br>
+<% end %>
