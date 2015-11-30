@@ -1,51 +1,36 @@
 
 <div style="display: inline-block">
-	<h1 class="header" style="margin-left:1em;"> PROFILE </h1>
-		<div class="profile_left">
-			<div style="display:inline-block; height:30em; width: 30em;">
-			<img id="pic" class="IMG1" src= "http://i936.photobucket.com/albums/ad204/carmenmbonilla/wildlife%20-%20%20natures%20landscape/zzanimalsjdkkjkds_zps3d92f116-1.jpg"/>
-			</div>
-			<p style ="margin-top: -13em;">
-				<strong>Name:</strong>
-				<%= @user.name %>
-			</p>
-	
-			<p>
-				<strong>Email:</strong>
-				<%= @user.email %>
-			</p>
 
-<table>
-	<tr>
-		<td><h1>PROFILE</h1></td>
-		<td style="text-align: right"><%= link_to 'Edit Profile', edit_user_path(@user) , class: "btn-primary"%></td>
-	</tr>
-</table>
+
 
 
 <!--<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> -->
-	<div class="profile_left">
+	<div class="profile_left" style="width: 68em;">
 		<!--<div style="display:inline-block; height:30em; width: 30em;">-->
-		<table>
-			<tr>
-				<td><img id="pic" class="IMG1" src= "http://i936.photobucket.com/albums/ad204/carmenmbonilla/wildlife%20-%20%20natures%20landscape/zzanimalsjdkkjkds_zps3d92f116-1.jpg"/></td>
-				<td>
-					<p>
-						<strong>Name:</strong>
-						<%= @user.name %>
-					</p>
-			
-					<p>
-						<strong>Email:</strong>
-						<%= @user.email %>
-					</p>
-				</td>
-			</tr>
-		</table>
-		
+	<table>
+		<tr>
+			<td><h1><strong>PROFILE</strong></h1></td>
+			<td style="text-align: right"><%= link_to 'Edit Profile', edit_user_path(@user) , class: "btn-primary"%></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><img id="pic" class="IMG1" src= "http://i936.photobucket.com/albums/ad204/carmenmbonilla/wildlife%20-%20%20natures%20landscape/zzanimalsjdkkjkds_zps3d92f116-1.jpg"/></td>
+			<td>
+				<p>
+					<strong>Name:</strong>
+					<%= @user.name %>
+				</p>
 	
-			<div class="section">
-			<h2 >Favorites</h2>
+				<p>
+					<strong>Email:</strong>
+					<%= @user.email %>
+				</p>
+			</td>
+		</tr>
+	</table>	
+			<div class="section" style="margin-left: -1.5em;">
+			<h2><strong style="margin-left: 1em;">Favorites</strong></h2>
 		    <ul>
 		   
     		<% if current_user.favorites.any? %>
@@ -56,37 +41,15 @@
     			  </div>
     			<%end%>
     		</div>
-    		<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary" %></div>
+    		<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary"%></div>
    			<%end%>
    			
 		    
 		    </ul>
 		  </div>
-		<div class="bottom">
-		<div class= "btn" style="margin-left:0em;"><%= link_to 'Edit', edit_user_path(@user) , :id => "nav-btn"%></div> 
-		<div class= "btn" style="margin-left:3em;"><%= link_to 'Home', root_path, :id => "nav-btn" %></div> 
-		<!--<div class= "btn" style="margin-left:7em;"><%= link_to 'Index', users_path, :id => "nav-btn" %></div>-->
-		</div>
+
   </div>
 
-		<div class="section">
-		<h2 >Favorites</h2>
-	    <ul>
-	   
-  		<% if current_user.favorites.any? %>
-  		<div class="fav">
-  			<% current_user.favorites.each do |fav| %>
-  			  <div class="poster" style="margin-top: 1em;">
-  			    <img src="<%= fav["posterPath"] %>" alt="Movie Poster"/>
-  			  </div>
-  			<%end%>
-  		</div>
-  		<!--<div style="display:block; margin:-5em 0em 4em 0em;"><%= link_to 'Manage Favorites', edit_user_path(@user), :class => "btn btn-primary" %></div>-->
- 			<%end%>
- 			
-	    
-	    </ul>
-	  </div>
 	<div class="bottom">
 	
 	<!--<div class= "btn" style="margin-left:7em;"><%= link_to 'Index', users_path, :id => "nav-btn" %></div>-->
