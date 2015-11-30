@@ -8,7 +8,7 @@
 					<% @movie.each do |movie| %>
 					<div class="poster" style="margin-top: 5px;">
 						<%= link_to movie_path(movie) do%>
-							<img src="<%= movie.posterPath%>" alt="Movie Poster"/>
+							<img class="IMG1" src="<%= movie.posterPath%>" alt="Movie Poster"/>
 							<span class="text"><%= movie.title%></span>
 						<%end%>
 					</div>
@@ -27,7 +27,7 @@
 					<% @movie.each do |movie| %>
 					<div class="poster" style="margin-top: 5px;">
 						<%= link_to movie_path(movie) do%>
-							<img src="<%= movie.posterPath%>" alt="Movie Poster"/>
+							<img class="IMG1" src="<%= movie.posterPath%>" alt="Movie Poster"/>
 							<span class="text"><%= movie.title%></span>
 						<%end%>
 					</div>
@@ -58,7 +58,7 @@
 							<% @movie.each do |movie| %>
 							<div class="poster" style="margin-top: 5px;">
 								<%= link_to movie_path(movie) do %>
-									<img src="<%= movie.posterPath %>" alt="Movie Poster"/>
+									<img class="IMG1" src="<%= movie.posterPath %>" alt="Movie Poster"/>
 									<span class="text"><%= movie.title %></span>
 								<% end %>
 							</div>

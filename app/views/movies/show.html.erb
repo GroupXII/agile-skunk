@@ -1,4 +1,5 @@
-<div style="background-color: #708090; height: 100em; margin-top: -0.7em;"
+<div style="background-color: #708090; height: 120em; margin-top: -0.7em;">
+  
   <p id="notice"><%= notice %></p>
   <% 5.times do %>
     <br>
@@ -14,24 +15,24 @@
       </div>
     </div> 
     <div class="movDescrip">
-      <table class ="table" >
-        <tbody>  
-          <tr>
-            <td><strong>Status:</strong></td>
-            <td><%= @movie.status %></td>
+      <table class ="table tb1">
+        <tbody class ="tbody1">  
+          <tr class="tr1">
+            <td class="td1"><strong>Status:</strong></td>
+            <td class="td1"><%= @movie.status %></td>
+          </tr>
+          <tr class="tr1">
+            <td class="td1"><strong>Average Score:</strong></td>
+            <td class="td1"><%= @movie.averageScore %></td>
           </tr>
           <tr>
-            <td><strong>Average Score:</strong></td>
-            <td><%= @movie.averageScore %></td>
+            <td class="td1"><strong>Votes:</strong></td>
+            <td class="td1"><%= @movie.numVotes %></td>
           </tr>
-          <tr>
-            <td><strong>Votes:</strong></td>
-            <td><%= @movie.numVotes %></td>
-          </tr>
-          <tr>
-            <td><strong>Release Date:</strong></td>
-            <td><%= @movie.releaseDate %></td>
-          </tr>
+          <tr class="tr1">
+            <td class="td1"><strong>Release Date:</strong></td>
+            <td class="td1"><%= @movie.releaseDate %></td>
+          </tr class="tr1">
         </tbody>
       </table>
 
@@ -60,7 +61,12 @@
 
     </div> <!-- ./movDescrip -->
   </div> <!-- ./container1 -->
-  
+
+<!-- displaying the stars rating below poster image -->
+
+  <div class="star-rating" style= "margin-top: 40.3em; margin-left: 4em; position: absolute;" data-score= <%= @avg_review %> ></div>
+  <em style="margin-top: 42em; margin-left: 4.2em; position: absolute;"><%= "#{@reviews.length} reviews (flickfindr rating)" %></em>
+
 <!-- displaying user reviews -->
   <div class="bar" style="margin-top: 18em; margin-left: 1em"><strong style="color: white">User Reviews</strong></div>
   <% if @reviews.blank? %>
@@ -68,12 +74,23 @@
   <% else %>
     <div class="review">
       <% @reviews.each do |review| %>
-        <p><%= review.rating %></p>
-        <p><%= review.comment %></p>
+        <div style="margin-top: 0.5em;"><strong><em><%= current_user.name %></em></strong></div>
+        <div class="star-rating" style="margin-top: 0.5em;" data-score= <%= review.rating %> ></div>
+        <div class="comment" style="margin-top: 0.5em;"><%= review.comment %></div>
     <div style="width: 50em; height:50px; border-bottom: 1px solid rgba(255, 255, 255, .25);"></div>
-    <br>
     <% end %>
   <% end %>
 </div>
+</div>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
 
 

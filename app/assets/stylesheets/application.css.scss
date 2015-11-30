@@ -16,7 +16,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "homePage";
- @import "movies";
+ @import 'movies';
  @import 'forem/base';
 
 .top_bar{
@@ -118,4 +118,8 @@ a.loginLink {
 	text-decoration: none;
 }
 
-
+img.IMG1 {
+	height: 250px;
+	width: 170px;
+	display: block;
+}

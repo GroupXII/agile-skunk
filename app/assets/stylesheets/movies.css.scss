@@ -54,7 +54,7 @@
 	margin: auto;
 }
 
-table, th, td, tr, tbody{
+table.tb1, th.th1, td.td1, tr.tr1, tbody.tbody1{
 	border: none;
 }
 
@@ -78,8 +78,22 @@ table, th, td, tr, tbody{
 	margin-top: 42em;
 	margin-left: 4em;
 	font-size: 18px;
+}
+
+img {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+}
+
+.comment {
+	overflow: hidden;
+	width: 50em;
+	word-wrap: break-word; 
+	text-overflow: ellipsis;
 
 }
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // index.html.erb
