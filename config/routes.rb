@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'movies' => 'movies#index'
   
+  # shows reviews for movies and allows user to favorite movie
   resources :movies do
-  put :favorite, on: :member
+      resources :reviews, except: [:show, :index]
+      put :favorite, on: :member
   end
   post 'movies/:id/favorite' => 'movies#index'
 

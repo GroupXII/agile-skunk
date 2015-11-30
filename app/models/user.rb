@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   
   has_many :favorite_movies
   has_many :favorites, through: :favorite_movies, source: :movie
+  has_many :movies
+  has_many :reviews, dependent: :destroy
   
 	attr_accessor :remember_token
 	before_save { self.email = email.downcase }

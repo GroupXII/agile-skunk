@@ -1,61 +1,79 @@
-
+<div style="background-color: #708090; height: 100em; margin-top: -0.7em;"
   <p id="notice"><%= notice %></p>
   <% 5.times do %>
     <br>
   <% end %>
-  <div class="container2">
-    <div class="movSpacing">
+
+  <div class="bar" style="margin-top: -2em;margin-left: 1em"><strong style="color: white"><%= @movie.title %></strong></div>
+  <div class="container2" style="background-color: #708090">
+    <div class="movSpacing" style="margin-top: 3em;">
       <div class = "movImage">
         <p>
           <img src = "<%= @movie.posterPath %>" style="width: 75%; height: 75%;">
         </p>
       </div>
-    </div>
-  
+    </div> 
     <div class="movDescrip">
-      <p style="float:center; margin: -6em 0em 6em -0.3em; position:relative;">
-        <% if logged_in? %> 
-          <% if current_user.favorites.where(:id => @movie.id).blank? %>
-            <%= link_to 'Favorite', favorite_movie_path(@movie, type: "favorite"), {method: :put, :class=>"btn btn-success"}%>
-          <%else%>
-            <%= link_to "unfavorite", favorite_movie_path(@movie, type: "delete"), {method: :put, :class => "btn btn-danger"} %>
-          <%end%>
-        <%end%>
-      </p>
-      
-      
-      <p>
-        <strong>Title:</strong>
-        <%= @movie.title %>
-      </p>
-      
+      <table class ="table" >
+        <tbody>  
+          <tr>
+            <td><strong>Status:</strong></td>
+            <td><%= @movie.status %></td>
+          </tr>
+          <tr>
+            <td><strong>Average Score:</strong></td>
+            <td><%= @movie.averageScore %></td>
+          </tr>
+          <tr>
+            <td><strong>Votes:</strong></td>
+            <td><%= @movie.numVotes %></td>
+          </tr>
+          <tr>
+            <td><strong>Release Date:</strong></td>
+            <td><%= @movie.releaseDate %></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <p>
-        <strong>Synopsis:</strong>
-        <%= @movie.synopsis %>
-      </p>
+    <p style="position: absolute; margin-top: 1em; margin-left: 0.5em;">
+      <strong>Overview:</strong><br>
+      <%= @movie.synopsis %>
+    </p>
 
+<!-- creating favorite/unfavorite, write a review and movie index buttons -->
 
-      <p>
-        <strong>Status:</strong>
-        <%= @movie.status %>
-      </p>
-      
-      <p>
-       <strong>Average Score:</strong>
-        <%= @movie.averageScore %>
-      </p>
+    <div style="margin-left: 12em; margin-top: -16em;">  <%= link_to 'Movie Index', movies_path, :class => "btn btn-primary"%></div>
+    <% if logged_in? %>
+      <div style="margin-left: 5em;"><%= link_to 'Write a Review', new_movie_review_path(@movie), {:class => "btn btn-primary"} %></div>
+    <% else %>
+      <div style="margin-top: -16em;"><%= link_to 'Favorite', login_path, {:class => "btn btn-success"} %></div>
+      <div style="margin-left: 5em;"><%= link_to 'Write a Review', login_path, {:class => "btn btn-primary"} %></div>
+    <%end%>
 
-      <p>
-        <strong>Votes:</strong>
-        <%= @movie.numVotes %>
-      </p>
+    <% if logged_in? %> 
+      <% if current_user.favorites.where(:id => @movie.id).blank? %>
+        <%= link_to 'Favorite', favorite_movie_path(@movie, type: "favorite"), {method: :put, :class=>"btn btn-success"}%>
+      <%else%>
+        <%= link_to "unfavorite", favorite_movie_path(@movie, type: "delete"), {method: :put, :class => "btn btn-danger"} %>
+      <%end%>
+    <%end%>
 
-      <p>
-        <strong>Release Date:</strong>
-        <%= @movie.releaseDate %>
-      </p>
-
-      <%= link_to 'Movie Index', movies_path %>
     </div> <!-- ./movDescrip -->
   </div> <!-- ./container1 -->
+  
+<!-- displaying user reviews -->
+  <div class="bar" style="margin-top: 18em; margin-left: 1em"><strong style="color: white">User Reviews</strong></div>
+  <% if @reviews.blank? %>
+    <h3 style="margin-top: 32em; margin-left: 2em; position:relative;">There are currently no reviews</h3>
+  <% else %>
+    <div class="review">
+      <% @reviews.each do |review| %>
+        <p><%= review.rating %></p>
+        <p><%= review.comment %></p>
+    <div style="width: 50em; height:50px; border-bottom: 1px solid rgba(255, 255, 255, .25);"></div>
+    <br>
+    <% end %>
+  <% end %>
+</div>
+
+
