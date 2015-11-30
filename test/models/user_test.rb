@@ -14,8 +14,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
 
-  	test "create user1" do 
-		user= User.new(user:"test1", email:"test1@email.com")
+  test "create user1" do 
+		user= User.new(name:"test1", email:"test1@email.com")
+		assert user.name == "test1"
+		assert user.email == "test1@email.com"
 	end
 
 	test "same user1" do 
