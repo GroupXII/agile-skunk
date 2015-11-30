@@ -1,9 +1,13 @@
+
 <%= simple_form_for [forem, @forum, @topic] do |f| %>
-  <%= f.input :subject %>
+  <%= f.input :subject, :input_html => { :style => "width: 500px; margin-left: 1em;"} %>
 
   <%= f.simple_fields_for :posts do |post| %>
     <%= render :partial => "forem/posts/form", :locals => { :f => post }%>
   <% end %>
   
-  <%= f.submit :class => "btn btn-primary" %>
+<!-- this is the creat button for submitting topic/posts/replies -->
+  <div style="margin-top: 17em; margin-left: 5em;">
+  	<%= f.submit :class => "btn btn-primary" %>
+  </div>
 <% end %>

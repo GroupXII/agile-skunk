@@ -31,15 +31,15 @@
 	position: relative;
 	top: 3em;
 	left: -1em;
-	font-family: Verdana, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 20px;
 	width: 30em;
 	float: right;
-	color: white;
+	color: black;
 }
 
 .middle1 {
-	height: 90em;
+	height: auto;
 	width: 80em;
 	border: 2px solid black;
 	border-radius: 5px;
@@ -49,15 +49,37 @@
 }
 
 .container2 {
-	background: #1B1B1B;
-	height: 67em;
+	background: #ccc;
 	width: 75em;
-	margin: auto;
-	border: 1px solid gray;
 	margin: auto;
 }
 
+table, th, td, tr, tbody{
+	border: none;
+}
 
+.bar {
+	width:31em;
+	margin-top: 2em;
+ 	height: 2em;
+ 	font-size: 34px;
+ 	margin: auto;
+	background-color: black;
+	z-index: 0;
+	position: absolute;
+}
+
+.options {
+	margin-left: 12em; 
+	margin-top: -16em;
+}
+
+.review {
+	margin-top: 42em;
+	margin-left: 4em;
+	font-size: 18px;
+
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // index.html.erb
