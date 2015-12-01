@@ -20,6 +20,8 @@
           <%= movie.synopsis %>
         </p>
       </div><%= link_to "more details", movie %>
+      <div style="position: absolute; margin-left: 29em;"><%= link_to 'Favorite', login_path, {:class=>"btn btn-success btn-sm"}%></div>
+
       <% if logged_in? %> 
         <% if current_user.favorites.where(:id => movie.id).blank? %>
           <div style="position: absolute; margin-left: 29em;"><%= link_to 'Favorite', favorite_movie_path(movie, type: "favorite"), {method: :put, :class=>"btn btn-success btn-sm"}%></div>
