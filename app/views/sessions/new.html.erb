@@ -15,13 +15,13 @@
             <%= f.password_field :password,  class:'text_area', style: "width: 225px"%>
           </div>
 
-           <div style="margin-left: -1em; margin-top: -2em;"><%= f.submit "Log in", class: "btn btn-primary" %></div>
+           <div style="margin-left: -1.5em; margin-top: -2em;"><%= f.submit "Log in", class: "btn btn-primary" %></div>
           
             <p><strong><em style="color:white; position: absolute; margin-top: 2em; margin-left: -1em;">New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></em></strong></p>
          <% end %>
          
          <% flash.each do |message_type, message| %>
-          <div class="login-<%= message_type %>" style="z-index: 1; position: relative; margin: auto; font-size: 1em"><%= message %></div>
+          <div class="login-<%= message_type %>" style="z-index: 1; position: relative; margin-left: -1em; margin-top: 5em; font-size: 1em"><%= message %></div>
         <% end %>
       </div>
     </div>
