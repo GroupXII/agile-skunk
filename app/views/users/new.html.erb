@@ -1,12 +1,12 @@
 <!-- CHANGE LATER -->
 <!--HEADER FOR THE PAGES **COPY AND PASTE INTO EVERYPAGE -->
-
+<div style="height: 80em;">
 <% provide(:title, 'Sign up') %>
 
 <% 5.times do%>
   <br>
 <% end %>
-<div class="container1">
+<div class="container1" style="height: 50em;">
   <%if logged_in? %>
     <p>You are not a new user! </p>
   <%else%>
@@ -16,11 +16,11 @@
       <%= form_for(@user) do |f| %>
 
       <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2>
+        <div id="error_explanation" style="margin-left: -10em;">
+          <h3 style="color: red;">
             <%= pluralize(@user.errors.count, "error") %> prohibited this user from being created:
-          </h2>
-          <ul>
+          </h3>
+          <ul style="color: red;">
             <% @user.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
@@ -28,20 +28,22 @@
         </div>
       <% end %>
       
+      <div style="margin-left: -5em;">
         <%= f.label :Username, style: "color:white;" %>
-        <%= f.text_field :name, class: 'text_area' %>
+        <%= f.text_field :name, class: 'text_area', style: "width: 250px" %>
 
         <%= f.label :email, style: "color:white;"%>
-        <%= f.email_field :email, class: 'text_area' %>
+        <%= f.email_field :email, class: 'text_area', style: "width: 250px" %>
 
         <%= f.label :password, style: "color:white;" %>
-        <%= f.password_field :password, class: 'text_area' %>
+        <%= f.password_field :password, class: 'text_area', style: "width: 250px" %>
 
 
         <%= f.label :password_confirmation, style: "color:white;" %>
-        <%= f.password_field :password_confirmation, class: 'text_area'%>
+        <%= f.password_field :password_confirmation, class: 'text_area', style: "width: 250px"%>
+      </div>
 
-        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <div style="margin-left: -5em; margin-top: -3em;"><%= f.submit "Create my account", class: "btn btn-primary" %></div>
       <% end %>
     </div>
   <%end%>
@@ -49,3 +51,4 @@
 <% 5.times do %>
   <br>
 <% end %>
+</div>

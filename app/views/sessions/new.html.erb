@@ -1,4 +1,4 @@
-
+<div style="height: 80em;">
   <% 5.times do %>
     <br>
   <% end %>
@@ -7,16 +7,17 @@
         <div class="form">
           <%= form_for(:session, url: login_path) do |f| %>
 
+          <div style="margin-left: -2em;">
             <%= f.label :email, style: "color:white;"%>
-            <%= f.email_field :email, class:'text_area' %>
+            <%= f.email_field :email, class:'text_area', style: "width: 225px" %>
 
             <%= f.label :password, style: "color:white;" %>
-            <%= f.password_field :password,  class:'text_area'%>
-         
+            <%= f.password_field :password,  class:'text_area', style: "width: 225px"%>
+          </div>
 
-            <%= f.submit "Log in", class: "btn btn-primary" %>
-
-            <p><strong><em style="color:white">New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></em></strong></p>
+           <div style="margin-left: -1em; margin-top: -2em;"><%= f.submit "Log in", class: "btn btn-primary" %></div>
+          
+            <p><strong><em style="color:white; position: absolute; margin-top: 2em; margin-left: -1em;">New user? <%= link_to "Sign up now!", signup_path, {:class=>"link"} %></em></strong></p>
          <% end %>
          
          <% flash.each do |message_type, message| %>
@@ -27,3 +28,4 @@
     <% 5.times do %>
       <br>
     <% end %>
+</div>
