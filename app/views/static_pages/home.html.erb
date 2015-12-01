@@ -7,7 +7,7 @@
 					<!-- Commented out for ruby equivalent
 						<% @movie = Movie.find_by_sql("SELECT * FROM movies WHERE movies.status = 'Popular' AND movies.releaseDate BETWEEN '2015-01-01' AND '2015-11-20' ORDER BY releaseDate DESC").first(6) %>
 					-->
-					<% @movie = Movie.where("status = 'Popular'").order("releaseDate BETWEEN '2015-01-01' AND '2015-11-20' DESC").first(6) %>
+					<% @movie = Movie.where("status = 'Popular' AND releaseDate BETWEEN '2015-01-01' AND '2015-11-20'").order("releaseDate DESC").first(6) %>
 					<% @movie.each do |movie| %>
 					<div class="poster" style="margin-top: 5px;">
 						<%= link_to movie_path(movie) do%>
